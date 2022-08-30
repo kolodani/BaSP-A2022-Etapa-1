@@ -4,9 +4,9 @@
 
 - [TRACKGENIX](#trackgenix)
     - [Content](#content)
-  - [What is Trackgenix? :thinking](#what-is-trackgenix-thinking)
-  - [What's your mission? :star_struck](#whats-your-mission-star_struck)
-  - [Who are you? :detective](#who-are-you-detective)
+  - [What is Trackgenix? :thinking:](#what-is-trackgenix-thinking)
+  - [What's your mission? :star_struck:](#whats-your-mission-star_struck)
+  - [Who are you? :detective:](#who-are-you-detective)
   - [About the project](#about-the-project)
     - [*Trackgenix website*](#trackgenix-website)
       - [Week 1 of development](#week-1-of-development)
@@ -14,19 +14,19 @@
     - [*Learning content*](#learning-content)
       - [Week 1 of classes](#week-1-of-classes)
       - [Week 2 of classes](#week-2-of-classes)
-  - [Technologies used :exploding_head](#technologies-used-exploding_head)
-  - [Development tools :nerd_face](#development-tools-nerd_face)
-    - [Personal profile :see_no_evil](#personal-profile-see_no_evil)
+  - [Technologies used :exploding_head:](#technologies-used-exploding_head)
+  - [Development tools :nerd_face:](#development-tools-nerd_face)
+    - [Personal profile :see_no_evil:](#personal-profile-see_no_evil)
 
-## What is Trackgenix? :thinking
+## What is Trackgenix? :thinking:
 
 *TRACKGENIX* is a revolutionary system designed by GigaTech Software Solutions SA.
 
-## What's your mission? :star_struck
+## What's your mission? :star_struck:
 
 Our *Mission* is to allow workers all over the world to reach their full potential. Our *Goal* is to bring more power to start-ups through top-notch and user-friendly time-tracking web apps, easily accessible through any device. We believe in integrity, honesty, passion for our client's ideas and communication.
 
-## Who are you? :detective
+## Who are you? :detective:
 
 RadiumRocket developed TrackGenix as a software solution for optimal time-tracking and project management as a request for one of its most trusted clients, GigaTech Software Solutions, in late 2021, and swiftly became one of the most requested services in all of the million-dollar South American productivity industry. RadiumRocket are a group of passionate people fond of the latest cutting edge technologies in software development. They position ourselves at your side through all the process of development being responsible and co-workers with you to successfully get your product moving.
 
@@ -60,17 +60,17 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 - Later, we learned how to use Git and Github. we understood how powerful version control tools are and how useful it is to use them
 - Finally, we learned HTML, its tags, its syntax, its semantics.
 
-## Technologies used :exploding_head
+## Technologies used :exploding_head:
 
 - HTML
 
-## Development tools :nerd_face
+## Development tools :nerd_face:
 
 - [*Visual Studio Code* (VSCode) - Code editor](https://code.visualstudio.com/)
 - [*Figma* - Web design tool](https://www.figma.com/)
 - [*Git* - Version control system](https://git-scm.com/)
 - [*Github* - Code hosting platform](<https://github.com/>)
 
-### Personal profile :see_no_evil
+### Personal profile :see_no_evil:
 
 - [GitHub](<https://github.com/kolodani>)
