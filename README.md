@@ -1,5 +1,11 @@
 # TRACKGENIX
 
+## What is it? :thinking:
+
+- It's a revolutionary system designed by GigaTech Software Solutions SA.
+
+## About the project
+
 ## _Trackgenix website_
 
 ### Week 1 of development
@@ -27,3 +33,5 @@
 - First we learned the definition of SEO and what it is for. as well as how we understood how it increases the views of a web page
 - Later, we learned how to use Git and Github. we understood how powerful version control tools are and how useful it is to use them
 - Finally, we learned HTML, its tags, its syntax, its semantics.
+
+
