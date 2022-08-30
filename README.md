@@ -2,7 +2,21 @@
 
 ### Content
 
-    - [What is Trackgenix?](#what-is-trackgenix?)
+- [TRACKGENIX](#trackgenix)
+    - [Content](#content)
+  - [What is Trackgenix? :thinking](#what-is-trackgenix-thinking)
+  - [What's your mission? :star_struck](#whats-your-mission-star_struck)
+  - [Who are you?](#who-are-you)
+  - [About the project](#about-the-project)
+    - [*Trackgenix website*](#trackgenix-website)
+      - [Week 1 of development](#week-1-of-development)
+      - [Week 2 of development](#week-2-of-development)
+    - [*Learning content*](#learning-content)
+      - [Week 1 of classes](#week-1-of-classes)
+      - [Week 2 of classes](#week-2-of-classes)
+  - [Technologies used](#technologies-used)
+  - [Development tools](#development-tools)
+      - [Personal profile](#personal-profile)
 
 ## What is Trackgenix? :thinking
 
@@ -32,16 +46,32 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 - We created the Trackgenix website landing page using HTML
 - For now it is only the base of the website but with this we have the structure to be able to continue growing the project
 
-### *learning content per week*
+### *Learning content*
 
-#### Week 1 of class
+#### Week 1 of classes
 
 - First we saw a very complete timeline of the internet, browsers, and web development technologies
 - Then we learned the work methodology called SCRUM
 - And finally we learned the basic use of the figma tool to create a web page
 
-#### Week 2 of class
+#### Week 2 of classes
 
 - First we learned the definition of SEO and what it is for. as well as how we understood how it increases the views of a web page
 - Later, we learned how to use Git and Github. we understood how powerful version control tools are and how useful it is to use them
 - Finally, we learned HTML, its tags, its syntax, its semantics.
+
+
+## Technologies used
+
+- HTML
+
+## Development tools
+
+- Visual Studio Code
+- Figma
+- Git
+- Github
+
+#### Personal profile
+
+- [GitHub](<https://github.com/kolodani>)
