@@ -1,0 +1,161 @@
+body{
+    background-color: #ffffff;
+}
+
+header{
+    position: sticky;
+    width: 1512px;
+    height: 91px;
+    background-color: #373867;
+}
+
+header h1{
+    position: absolute;
+    width: 366px;
+    height: 70px;
+    left: 573px;
+    top: 9px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+    color: #46a07b;
+}
+
+header img{
+    position: absolute;
+    width: 65px;
+    height: 67px;
+    left: 26px;
+    top: 12px;
+}
+
+aside{
+    position: sticky;
+    width: 253px;
+    height: 891px;
+    background-color: rgba(55, 56, 103, 0.1);
+}
+
+aside form{
+    position: absolute;
+    width: 236px;
+    height: 30.5px;
+    left: 8px;
+    top: 21px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 3.4px;
+}
+
+aside form input{
+    border: 0;
+    padding: 0;
+    padding-left: 20px;
+    width: 216px;
+    height: 30.5px;
+    left: 8px;
+    top: 82px;
+    background: #ffffff;
+    
+}
+
+aside h4 {
+    position: absolute;
+    width: 50px;
+    height: 23px;
+    left: 92px;
+    top: 69px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19.3px;
+    line-height: 23px;
+    color: #373867;
+}
+
+aside ul{
+    position: absolute;
+    left: 46px;
+    top: 162px;
+}
+
+aside ul li{
+    list-style: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.3px;
+    line-height: 23px;
+    color: #479679;
+}
+
+aside img {
+    position: absolute;
+    width: 66px;
+    height: 75px;
+    left: 95px;
+    top: 639px;
+}
+
+aside p {
+    position: absolute;
+    width: 232px;
+    height: 13px;
+    left: 12px;
+    top: 740px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+nav{
+    position: absolute;
+    width: 1259px;
+    height: 55px;
+    left: 253px;
+    top: 91px;
+    background-color: #373867;
+}
+
+nav ul{
+    position: absolute;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.3px;
+    line-height: 23px;
+}
+
+nav ul li a{
+    border: 1px solid #000000;
+    text-decoration: none;
+    color: #479679;
+}
+
+main{
+    position: absolute;
+    left: 253px;
+    top: 146px;
+    background-color: #ffffff;
+}
+
+main section{
+    position: absolute;
+    background-color: #ffffff;
+}
+
+footer{
+    position: absolute;
+    left: 253px;
+    width: 1259px;
+    background-color: #ffffff;
+}
