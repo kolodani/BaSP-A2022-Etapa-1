@@ -3,7 +3,8 @@ body{
 }
 
 header{
-    position: sticky;
+    display: inline;
+    position: fixed;
     width: 1512px;
     height: 91px;
     background-color: #373867;
@@ -32,9 +33,11 @@ header img{
 }
 
 aside{
-    position: sticky;
+    position: fixed;
     width: 253px;
     height: 891px;
+    left: 0px;
+    top: 91px;
     background-color: rgba(55, 56, 103, 0.1);
 }
 
@@ -113,7 +116,7 @@ aside p {
 }
 
 nav{
-    position: absolute;
+    position: fixed;
     width: 1259px;
     height: 55px;
     left: 253px;
@@ -142,19 +145,78 @@ nav ul li a{
 }
 
 main{
-    position: absolute;
+    position: relative;
+    display: block;
+    width: 1259px;
     left: 253px;
     top: 146px;
     background-color: #ffffff;
 }
 
 main section{
-    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     background-color: #ffffff;
 }
 
-footer{
+.section-welcome{
+    position: relative;
+    width: 100%;
+    height: 839px;
+}
+
+.section-welcome h2{
     position: absolute;
+    width: 235px;
+    height: 58px;
+    left: 512px;
+    top: 113px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 49.5px;
+    line-height: 58px;
+    color: #373867;
+}
+
+.section-welcome article{
+    position: absolute;
+    display: inline-block;
+    width: 1090px;
+    height: 457px;
+    left: 134px;
+    top: 231px;
+    right: 0px;
+}
+
+.section-welcome article div{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+
+.section-welcome article div p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28.8px;
+    line-height: 41px;
+    align-items: center;
+    color: #373867;
+}
+
+.section-welcome article img{
+    position: absolute;
+    display: inline-block;
+}
+
+.section-application-features{
+    position: absolute;
+}
+
+footer{
+    position: relative;
     left: 253px;
     width: 1259px;
     background-color: #ffffff;
