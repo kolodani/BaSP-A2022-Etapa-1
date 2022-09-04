@@ -1,8 +1,8 @@
-body{
+body {
     background-color: #ffffff;
 }
 
-header{
+header {
     display: inline;
     position: fixed;
     width: 1512px;
@@ -10,7 +10,7 @@ header{
     background-color: #373867;
 }
 
-header h1{
+header h1 {
     position: absolute;
     width: 366px;
     height: 70px;
@@ -24,7 +24,7 @@ header h1{
     color: #46a07b;
 }
 
-header img{
+header img {
     position: absolute;
     width: 65px;
     height: 67px;
@@ -32,7 +32,7 @@ header img{
     top: 12px;
 }
 
-aside{
+aside {
     position: fixed;
     width: 253px;
     height: 891px;
@@ -41,7 +41,7 @@ aside{
     background-color: rgba(55, 56, 103, 0.1);
 }
 
-aside form{
+aside form {
     position: absolute;
     width: 236px;
     height: 30.5px;
@@ -52,7 +52,7 @@ aside form{
     border-radius: 3.4px;
 }
 
-aside form input{
+aside form input {
     border: 0;
     padding: 0;
     padding-left: 20px;
@@ -61,7 +61,7 @@ aside form input{
     left: 8px;
     top: 82px;
     background: #ffffff;
-    
+
 }
 
 aside h4 {
@@ -78,13 +78,13 @@ aside h4 {
     color: #373867;
 }
 
-aside ul{
+aside ul {
     position: absolute;
     left: 46px;
     top: 162px;
 }
 
-aside ul li{
+aside ul li {
     list-style: none;
     font-family: 'Roboto';
     font-style: normal;
@@ -115,7 +115,7 @@ aside p {
     line-height: 13px;
 }
 
-nav{
+nav {
     position: fixed;
     width: 1259px;
     height: 55px;
@@ -124,11 +124,11 @@ nav{
     background-color: #373867;
 }
 
-nav ul{
+nav ul {
     position: absolute;
 }
 
-nav ul li{
+nav ul li {
     list-style: none;
     display: inline-block;
     font-family: 'Roboto';
@@ -138,13 +138,13 @@ nav ul li{
     line-height: 23px;
 }
 
-nav ul li a{
+nav ul li a {
     border: 1px solid #000000;
     text-decoration: none;
     color: #479679;
 }
 
-main{
+main {
     position: relative;
     display: block;
     width: 1259px;
@@ -153,20 +153,20 @@ main{
     background-color: #ffffff;
 }
 
-main section{
+main section {
     display: inline-block;
     width: 100%;
     height: 100%;
     background-color: #ffffff;
 }
 
-.section-welcome{
+.section-welcome {
     position: relative;
     width: 100%;
     height: 839px;
 }
 
-.section-welcome h2{
+.section-welcome h2 {
     position: absolute;
     width: 235px;
     height: 58px;
@@ -180,7 +180,7 @@ main section{
     color: #373867;
 }
 
-.section-welcome article{
+.section-welcome article {
     position: absolute;
     display: inline-block;
     width: 1090px;
@@ -190,13 +190,13 @@ main section{
     right: 0px;
 }
 
-.section-welcome article div{
+.section-welcome article div {
     display: inline-block;
     width: 50%;
     height: 100%;
 }
 
-.section-welcome article div p{
+.section-welcome article div p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -206,16 +206,93 @@ main section{
     color: #373867;
 }
 
-.section-welcome article img{
+.section-welcome article img {
     position: absolute;
     display: inline-block;
 }
 
-.section-application-features{
-    position: absolute;
+.section-application-features {
+    position: relative;
+    width: 100%;
+    height: 839px;
 }
 
-footer{
+.section-application-features h3 {
+    position: absolute;
+    width: 386px;
+    height: 47px;
+    left: 267px;
+    top: 135px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: #373867;
+}
+
+.section-application-features article {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    height: 457px;
+    left: 134px;
+    top: 231px;
+    right: 0px;
+}
+
+.section-application-features article h6 {
+    position: absolute;
+    width: 132px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    white-space: nowrap;
+    color: #373867;
+}
+
+.section-application-features article img {
+    position: absolute;
+    display: inline-block;
+    top: 48px;
+}
+
+.section-why-should-you {
+    position: relative;
+    width: 100%;
+    height: 839px;
+}
+
+.section-why-should-you h3 {
+    position: absolute;
+    width: 596px;
+    height: 41px;
+    left: 245px;
+    top: 133px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    white-space: nowrap;
+    color: #373867;
+}
+
+.section-why-should-you article {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    left: 134px;
+    top: 231px;
+    right: 0px;
+}
+
+
+footer {
     position: relative;
     left: 253px;
     width: 1259px;
