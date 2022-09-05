@@ -12,7 +12,7 @@ header {
     width: 1512px;
     height: 91px;
     background-color: #373867;
-    z-index: 1;
+    z-index: 2;
 }
 
 h1 {
@@ -84,7 +84,7 @@ aside {
 
 .aside-list {
     position: absolute;
-    left: 46px;
+    left: 26px;
     top: 162px;
     height: 400px;
     text-decoration: none;
@@ -109,7 +109,7 @@ aside {
     color: #479679;
 }
 
-aside img {
+.aside-img {
     position: absolute;
     width: 66px;
     height: 75px;
@@ -137,38 +137,26 @@ nav {
     left: 253px;
     top: 91px;
     background-color: #373867;
-    z-index: 1;
+    border-bottom: 1px solid #000000;
+    z-index: 2;
 }
 
-nav ul {
-    width: 100%;
-    height: 100%;
+nav button {
+    width: 206px;
+    height: 43px;
+    border: 0;
+    border-left: 1px solid #000000;
+    background-color: #373867;
 }
 
-nav ul div {
-    display: inline-block;
-    width: 16%;
-    height: 100%;
-    border: 1px solid #000000;
-}
-
-nav ul div li {
-    position: absolute;
-    text-align: center;
-    list-style: none;
-    height: 100%;
+nav button a {
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 19.3px;
     line-height: 23px;
-}
-
-nav ul li a {
-    position: absolute;
-    height: 100%;
-    text-decoration: none;
     color: #479679;
+    text-decoration: none;
 }
 
 main {
@@ -190,21 +178,35 @@ main section {
 .section-welcome {
     position: relative;
     width: 100%;
-    height: 839px;
+    height: 1000px;
 }
 
-.section-welcome h2 {
+.section-welcome-box {
+    position: absolute;
+    left: 474px;
+    top: 103px;
+    width: 307px;
+    height: 81px;
+    background: rgba(170, 206, 155, 0.53);
+    border: 2px solid #000000;
+    filter: blur(4px);
+    border-radius: 20px;
+}
+
+.section-welcome-title {
     position: absolute;
     width: 235px;
     height: 58px;
-    left: 512px;
+    left: 535px;
     top: 113px;
+    z-index: 1;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 49.5px;
     line-height: 58px;
     color: #373867;
+    z-index: 1;
 }
 
 .section-welcome article {
@@ -221,6 +223,7 @@ main section {
     display: inline-block;
     width: 50%;
     height: 100%;
+    padding-top: 40px;
 }
 
 .section-welcome article div p {
@@ -238,10 +241,18 @@ main section {
     display: inline-block;
 }
 
+.section-separator-1 {
+    position: relative;
+    top: 822px;
+    left: 149px;
+    width: 1050px;
+    border: 1px solid #000000;
+}
+
 .section-application-features {
     position: relative;
     width: 100%;
-    height: 839px;
+    height: 1200px;
 }
 
 .section-application-features h3 {
@@ -272,6 +283,7 @@ main section {
     position: absolute;
     width: 132px;
     height: 28px;
+    left: 100px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -286,12 +298,32 @@ main section {
     position: absolute;
     display: inline-block;
     top: 48px;
+    left: 65px;
+    z-index: 1;
+}
+
+.application-features-green-box {
+    position: absolute;
+    width: 252px;
+    height: 240px;
+    left: 50px;
+    top: 38px;
+    background: rgba(170, 206, 155, 0.3);
+    border-radius: 20px;
+}
+
+.section-separator-2 {
+    position: relative;
+    top: 260px;
+    left: 149px;
+    width: 1050px;
+    border: 1px solid #000000;
 }
 
 .section-why-should-you {
     position: relative;
     width: 100%;
-    height: 839px;
+    height: 1000px;
 }
 
 .section-why-should-you h3 {
@@ -312,22 +344,23 @@ main section {
 .section-why-should-you article {
     position: relative;
     display: inline-block;
-    width: 40%;
+    width: 45%;
     height: 200px;
     left: 134px;
     top: 231px;
+    padding-bottom: 55px;
 }
 
 .section-why-should-you article h6 {
     position: absolute;
     width: 291px;
     height: 28px;
+    left: 155px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
-    text-align: center;
     color: #373867;
 }
 
@@ -335,6 +368,7 @@ main section {
     position: absolute;
     display: inline-block;
     top: 48px;
+    left: 20px;
 }
 
 .section-why-should-you article p {
@@ -347,22 +381,40 @@ main section {
     font-size: 20px;
     line-height: 23px;
     text-align: center;
-    left: 100px;
-    top: 100px;
+    left: 150px;
+    top: 75px;
     color: #373867;
+}
+
+.why-should-green-box {
+    position: absolute;
+    rotate: 45deg;
+    width: 131.2px;
+    height: 125px;
+    top: 38px;
+    background: rgba(170, 206, 155, 0.3);
+    border-radius: 20px;
+}
+
+.section-separator-3 {
+    position: relative;
+    top: 400px;
+    left: 149px;
+    width: 1050px;
+    border: 1px solid #000000;
 }
 
 .section-inscription-form {
     position: relative;
     width: 100%;
-    height: 839px;
+    height: 1100px;
 }
 
 .section-inscription-form h3 {
     position: absolute;
     width: 178px;
     height: 28px;
-    left: 44px;
+    left: 93px;
     top: 62px;
     font-family: 'Roboto';
     font-style: normal;
@@ -371,14 +423,15 @@ main section {
     line-height: 28px;
     white-space: nowrap;
     color: #000000;
+    text-decoration-line: underline;
 }
 
 .section-inscription-form article form {
     position: absolute;
     display: inline-block;
-    left: 2.12%;
+    left: 7.12%;
     right: 51.59%;
-    width: 100%;
+    width: 95%;
     top: 160px;
 }
 
@@ -396,8 +449,8 @@ main section {
 .section-inscription-form article .contact-area {
     position: absolute;
     display: inline-block;
-    width: 1128px;
-    left: 27px;
+    width: 1080px;
+    left: 90px;
     top: 185px;
     background: #FFFFFF;
     border: 1px solid #373867;
@@ -409,14 +462,14 @@ main section {
     position: relative;
     display: inline-block;
     width: 45%;
-    left: 27px;
+    left: 90px;
     top: 290px;
 }
 
 .section-inscription-form article div button {
     position: relative;
     display: inline-block;
-    width: 14%;
+    width: 52px;
     height: 32px;
     left: 0px;
     top: 0px;
@@ -427,6 +480,7 @@ main section {
     display: inline-block;
     width: 15%;
     height: 28px;
+    top: -10px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -438,7 +492,7 @@ main section {
 
 .section-inscription-form article h6 {
     position: absolute;
-    left: 45px;
+    left: 90px;
     right: 94.04%;
     top: 400px;
     bottom: 95.62%;
@@ -454,20 +508,36 @@ main section {
 .section-inscription-form .text-box input {
     position: absolute;
     display: inline-block;
-    width: 1128px;
-    height: 200px;
-    left: 27px;
-    top: 480px;
+    width: 1080px;
+    height: 323px;
+    left: 90px;
+    top: 425px;
     background: #FFFFFF;
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
     border-radius: 4px;
 }
 
+.section-inscription-form-submit {
+    position: absolute;
+    display: inline-block;
+    left: 90px;
+    top: 755px;
+    border-radius: 4px;
+}
+
+.section-separator-4 {
+    position: relative;
+    top: 850px;
+    left: 149px;
+    width: 1050px;
+    border: 1px solid #000000;
+}
+
 .section-company-mission {
     position: relative;
     width: 100%;
-    height: 839px;
+    height: 1100px;
 }
 
 .section-company-mission .article-title {
@@ -489,6 +559,7 @@ main section {
     line-height: 24px;
     white-space: nowrap;
     color: #000000;
+    text-decoration-line: underline;
 }
 
 .section-company-mission .article-title img {
@@ -509,6 +580,7 @@ main section {
     width: 757px;
     height: 45px;
     left: 56px;
+    top: -45px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -518,13 +590,14 @@ main section {
     text-transform: uppercase;
     white-space: nowrap;
     color: #373867;
+    text-decoration-line: underline;
 }
 
 .section-company-mission .article-second-paragraph #company-mission-1 {
     position: absolute;
     width: 618px;
     height: 55px;
-    left: 180px;
+    left: 255px;
     top: 25px;
     font-family: 'Roboto';
     font-style: italic;
@@ -541,7 +614,7 @@ main section {
     width: 1050px;
     height: 95px;
     left: 25px;
-    top: 70px;
+    top: 90px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -583,7 +656,7 @@ main section {
     width: 1145px;
     height: 21px;
     left: 96px;
-    top: 85px;
+    top: 100px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -600,7 +673,7 @@ main section {
     width: 140px;
     height: 21px;
     left: 1000px;
-    top: 110px;
+    top: 130px;
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 500;
@@ -609,6 +682,16 @@ main section {
     text-align: center;
     white-space: nowrap;
     color: rgba(0, 0, 0, 0.8);
+}
+
+.company-mission-box {
+    position: absolute;
+    width: 1156px;
+    height: 81px;
+    left: 50px;
+    top: 85px;
+    background: rgba(217, 217, 217, 0.2);
+    border-radius: 9px;
 }
 
 .section-company-mission .article-fourth {
@@ -640,7 +723,7 @@ main section {
     width: 769px;
     height: 280px;
     left: 56px;
-    top: 85px;
+    top: 100px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -653,15 +736,23 @@ main section {
     position: absolute;
     display: inline-block;
     left: 830px;
-    top: 50px;
+    top: 90px;
     width: 363px;
     height: 251px;
+}
+
+.section-separator-5 {
+    position: relative;
+    top: 850px;
+    left: 149px;
+    width: 1050px;
+    border: 1px solid #000000;
 }
 
 .section-our-products {
     position: relative;
     width: 100%;
-    height: 1200px;
+    height: 1400px;
 }
 
 .section-our-products h3 {
@@ -676,6 +767,7 @@ main section {
     line-height: 36px;
     white-space: nowrap;
     color: #000000;
+    text-decoration: underline;
 }
 
 .section-our-products article {
@@ -730,15 +822,22 @@ main section {
     color: #000000;
 }
 
-
 .section-our-products article ul li {
     list-style-type: circle;
+}
+
+.section-separator-6 {
+    position: relative;
+    top: 100px;
+    left: 149px;
+    width: 1050px;
+    border: 1px solid #000000;
 }
 
 .section-company {
     position: relative;
     width: 100%;
-    height: 1200px;
+    height: 1400px;
 }
 
 .section-company h3 {
@@ -753,36 +852,39 @@ main section {
     line-height: 36px;
     white-space: nowrap;
     color: #000000;
+    text-decoration: underline;
 }
 
 .section-company article {
     position: relative;
     display: inline-block;
     height: 400px;
-    width: 85%;
-    left: 134px;
-    top: 50px;
+    width: 95%;
+    left: 70px;
+    top: 100px;
 }
 
 .section-company article img {
     display: inline-block;
     width: 473px;
     height: 304px;
+    border: 0.35px solid #000000
 }
 
 .section-company article div {
     display: inline-block;
-    width: 473px;
+    width: 580px;
     height: 304px;
     left: 500px;
     top: 0px;
 }
 
 .section-company article h6 {
-    display: inline-block;
+    position: absolute;
     width: 590px;
     height: 53px;
-    top: 350px;
+    top: 45px;
+    left: 500px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -792,10 +894,11 @@ main section {
 }
 
 .section-company article p {
-    display: inline-block;
+    position: absolute;
     width: 520px;
     height: 168px;
-    top: 440px;
+    top: 100px;
+    left: 515px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -808,8 +911,44 @@ main section {
     position: absolute;
     width: 473px;
     height: 304px;
-    left: 500px;
+    left: 590px;
     top: 0px;
+}
+
+.section-company article .company-second-title {
+    position: absolute;
+    width: 590px;
+    height: 53px;
+    top: 45px;
+    left: 150px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+}
+
+.section-company article .company-second-paragraph {
+    position: absolute;
+    width: 520px;
+    height: 168px;
+    top: 100px;
+    left: 65px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.section-separator-7 {
+    position: relative;
+    top: 100px;
+    left: 149px;
+    width: 1050px;
+    border: 1px solid #000000;
 }
 
 .section-support {
@@ -830,20 +969,22 @@ main section {
     line-height: 36px;
     white-space: nowrap;
     color: #000000;
+    text-decoration: underline;
 }
 
 .section-support article {
     position: relative;
     display: inline-block;
-    width: 47%;
-    height: 400px;
-    left: 134px;
-    top: 50px;
+    width: 100%;
+    height: 325px;
+    left: 50px;
+    top: 70px;
 }
 
 .section-support article img {
     width: 505px;
     height: 282px;
+    padding-right: 150px;
 }
 
 .section-support article #image-support {
@@ -851,9 +992,15 @@ main section {
     height: 288px;
 }
 
+.section-support .section-support-texts {
+    height: 200px;
+}
+
 .section-support article p {
+    position: absolute;
     width: 448px;
     height: 69px;
+    left: 24px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -861,6 +1008,10 @@ main section {
     line-height: 28px;
     text-align: center;
     color: #000000;
+}
+
+.section-support article .section-suppot-image-text {
+    left: 650px;
 }
 
 .section-support h5 {
@@ -916,22 +1067,25 @@ main section {
     left: 72px;
 }
 
-.section-support button {
+.section-support-red-button {
     position: absolute;
     width: 480px;
     height: 116px;
     left: 350px;
-    top: 750px;
+    top: 850px;
     background: #98220d;
     box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
     filter: blur(3px);
     border-radius: 30px;
+    z-index: 0;
 }
 
 .section-support button a {
+    position: absolute;
     width: 423px;
     height: 34px;
-    left: 550px;
+    left: 26px;
+    top: 40px;
     font-family: 'Inter';
     font-style: italic;
     font-weight: 700;
@@ -939,12 +1093,24 @@ main section {
     line-height: 31px;
     text-align: center;
     color: #ffffff;
+    text-decoration: none;
+    z-index: 2;
+}
+
+.section-support .youtube-button {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 350px;
+    top: 850px;
+    z-index: 0;
 }
 
 footer {
     position: relative;
     left: 253px;
     width: 1259px;
+    height: 200px;
     background-color: #ffffff;
 }
 

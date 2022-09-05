@@ -36,46 +36,36 @@
                     <a class="aside-list-item-link" href=""> Contact information </a>
                 </li>
             </ul>
-            <img src="./Assets/Img/rocket-logo.png" alt="logo of Radium Rocket" />
+            <img class="aside-img" src="./Assets/Img/rocket-logo.png" alt="logo of Radium Rocket" />
             <p>Developed by GigaTech Software Solutions S.A.</p>
         </aside>
         <nav>
-            <ul>
-                <div>
-                    <li>
-                        <a href=""> Features </a>
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <a href=""> Why Should You Use Trackgenix </a>
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <a href=""> History </a>
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <a href=""> Products </a>
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <a href=""> About Us </a>
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <a href=""> Support </a>
-                    </li>
-                </div>
-            </ul>
+            <button>
+                <a href=""> Features </a>
+            </button>
+            <button>
+                <a href=""> Why Should You Use Trackgenix </a>
+            </button>
+            <button>
+                <a href=""> History </a>
+            </button>
+            <button>
+                <a href=""> Products </a>
+            </button>
+            <button>
+                <a href=""> About Us </a>
+            </button>
+            <button>
+                <a href=""> Support </a>
+            </button>
         </nav>
         <main>
             <section class="section-welcome">
-                <h2>Welcome</h2>
+                <div class="section-welcome-box">
+                </div>
+                <h2 class="section-welcome-title">
+                    Welcome
+                </h2>
                 <article>
                     <div>
                         <p>
@@ -89,26 +79,34 @@
                     </div>
                     <img src="./Assets/Img/welcome-image.jpg" alt="Image of a keyboad and programming code" />
                 </article>
+                <div class="section-separator-1">
+                </div>
             </section>
             <section class="section-application-features">
                 <h3>Application Features</h3>
                 <article>
                     <h6>Hours Log</h6>
                     <img src="./Assets/Img/hours-log-image.png" alt="Image of a businessman and a clock" />
+                    <div class="application-features-green-box"></div>
                 </article>
                 <article>
                     <h6>Reports</h6>
                     <img src="./Assets/Img/reports-image.png" alt="image of a sheet of paper with reports" />
+                    <div class="application-features-green-box"></div>
                 </article>
                 <article>
                     <h6>Resource Management</h6>
                     <img src="./Assets/Img/resource-management-image.png" alt="image of a businessman and a task 
                     scheme" />
+                    <div class="application-features-green-box"></div>
                 </article>
                 <article>
                     <h6>Multiple Roles</h6>
                     <img src="./Assets/Img/multiple-roles-image.png" alt="image of three people" />
+                    <div class="application-features-green-box"></div>
                 </article>
+                <div class="section-separator-2">
+                </div>
             </section>
             <section class="section-why-should-you">
                 <h3>Why Should You Use Trackgenix?</h3>
@@ -119,11 +117,13 @@
                         Be more productive using better Focus, Time Management,Organization
                         and Efficiency.
                     </p>
+                    <div class="why-should-green-box"></div>
                 </article>
                 <article>
                     <h6>Work Traceability</h6>
                     <img src="./Assets/Img/work-traceability-image.png" alt="image of a file with a magnifying glass" />
                     <p>Keep track of specs, changes, requests, results, and versions.</p>
+                    <div class="why-should-green-box"></div>
                 </article>
                 <article>
                     <h6>Leadership and team management</h6>
@@ -135,12 +135,16 @@
                         and uplifting team members so they perform to the best of their
                         abilities and continue to grow as professionals.
                     </p>
+                    <div class="why-should-green-box"></div>
                 </article>
                 <article>
                     <h6>Decision making</h6>
                     <img src="./Assets/Img/decision-making-image.png" alt="image of a businessman and a check box" />
                     <p>Make better decisions for your business.</p>
+                    <div class="why-should-green-box"></div>
                 </article>
+                <div class="section-separator-3">
+                </div>
             </section>
             <section class="section-inscription-form">
                 <h3>Inscription Form</h3>
@@ -176,7 +180,9 @@
                         <input type="text" placeholder="Enter your text here..." />
                     </label>
                 </article>
-                <input type="submit" value="submit" />
+                <input class="section-inscription-form-submit" type="submit" value="submit" />
+                <div class="section-separator-4">
+                </div>
             </section>
             <section class="section-company-mission">
                 <article class="article-title">
@@ -204,6 +210,7 @@
                         team workload”
                     </p>
                     <p id="customer">-Satisfied Customer</p>
+                    <div class="company-mission-box"></div>
                 </article>
                 <article class="article-fourth">
                     <h5>About Us</h5>
@@ -220,6 +227,8 @@
                     </p>
                     <img src="./Assets/Img/security-image.jpg" alt="image image with a cursor and the word security" />
                 </article>
+                <div class="section-separator-5">
+                </div>
             </section>
             <section class="section-our-products">
                 <h3>Our Products</h3>
@@ -281,6 +290,8 @@
                         <li>Equipped with graphs and tables</li>
                     </ul>
                 </article>
+                <div class="section-separator-6">
+                </div>
             </section>
             <section class="section-company">
                 <h3>Company</h3>
@@ -299,8 +310,8 @@
                     <img id="group-of-people" src="./Assets/Img/company-image2.jpg"
                         alt="image of a group of people working in an office" />
                     <div>
-                        <h6>An inclusive workplace for everyone</h6>
-                        <p>
+                        <h6 class="company-second-title">An inclusive workplace for everyone</h6>
+                        <p class="company-second-paragraph">
                             Get to know our team and our offices and join us in our leap
                             towards better human resources management. Learn how companies
                             from all sectors already manage talent in a more efficient and
@@ -321,18 +332,20 @@
                         </p>
                     </div>
                 </article>
+                <div class="section-separator-7">
+                </div>
             </section>
             <section class="section-support">
                 <h3>Support</h3>
                 <article>
                     <img src="./Assets/Img/support-image1.jpg" alt="image of a person with headphones in front of the 
                     computer" />
-                    <p>Phone call or Video conference support from 8am to 4pm everyday</p>
-                </article>
-                <article>
                     <img id="image-support" src="./Assets/Img/support-image2.jpg" alt="image of a keyboard and one of 
                     its keys is blue and says support" />
-                    <p>24h support by online chat-bot</p>
+                </article>
+                <article class="section-support-texts">
+                    <p>Phone call or Video conference support from 8am to 4pm everyday</p>
+                    <p class="section-suppot-image-text">24h support by online chat-bot</p>
                 </article>
                 <h5>Tutorials</h5>
                 <article id="video-list">
@@ -355,7 +368,8 @@
                         <li>11:25</li>
                     </ul>
                 </article>
-                <button type="submit">
+                <div class="section-support-red-button"></div>
+                <button class="youtube-button" type="submit">
                     <a href="https://www.youtube.com/">
                         Browse Full Playlist on Youtube
                     </a>
@@ -371,7 +385,7 @@
                     <img src="./Assets/Img/twitter-logo.png" alt="Twitter logo" />
                 </a>
                 <a href="https://www.instagram.com/">
-                    <img src="./Assets/Img/instagram-logo.jpg" alt="Instagram logo" />
+                    <img src="./Assets/Img/instagram-logo.png" alt="Instagram logo" />
                 </a>
                 <a href="https://ar.linkedin.com/">
                     <img src="./Assets/Img/linkedin-logo.png" alt="Linkedin logo" />
