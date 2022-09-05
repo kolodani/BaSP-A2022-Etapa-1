@@ -2,15 +2,20 @@ body {
     background-color: #ffffff;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 header {
     display: inline;
     position: fixed;
     width: 1512px;
     height: 91px;
     background-color: #373867;
+    z-index: 1;
 }
 
-header h1 {
+h1 {
     position: absolute;
     width: 366px;
     height: 70px;
@@ -24,12 +29,12 @@ header h1 {
     color: #46a07b;
 }
 
-header img {
+.header-image {
     position: absolute;
     width: 65px;
     height: 67px;
-    left: 26px;
-    top: 12px;
+    left: 14px;
+    top: 10px;
 }
 
 aside {
@@ -41,7 +46,7 @@ aside {
     background-color: rgba(55, 56, 103, 0.1);
 }
 
-aside form {
+.aside-form {
     position: absolute;
     width: 236px;
     height: 30.5px;
@@ -52,7 +57,7 @@ aside form {
     border-radius: 3.4px;
 }
 
-aside form input {
+.aside-form-input {
     border: 0;
     padding: 0;
     padding-left: 20px;
@@ -61,14 +66,13 @@ aside form input {
     left: 8px;
     top: 82px;
     background: #ffffff;
-
 }
 
-aside h4 {
+.aside-title {
     position: absolute;
     width: 50px;
     height: 23px;
-    left: 92px;
+    left: 100px;
     top: 69px;
     font-family: 'Roboto';
     font-style: normal;
@@ -78,19 +82,30 @@ aside h4 {
     color: #373867;
 }
 
-aside ul {
+.aside-list {
     position: absolute;
     left: 46px;
     top: 162px;
-}
-
-aside ul li {
+    height: 400px;
+    text-decoration: none;
     list-style: none;
     font-family: 'Roboto';
     font-style: normal;
+    text-align: center;
     font-weight: 400;
     font-size: 19.3px;
     line-height: 23px;
+    color: #479679;
+}
+
+.aside-list-item {
+    position: relative;
+    padding: 18.21px;
+    border-bottom: 2px solid #000000;
+}
+
+.aside-list-item-link {
+    text-decoration: none;
     color: #479679;
 }
 
@@ -122,15 +137,26 @@ nav {
     left: 253px;
     top: 91px;
     background-color: #373867;
+    z-index: 1;
 }
 
 nav ul {
-    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-nav ul li {
-    list-style: none;
+nav ul div {
     display: inline-block;
+    width: 16%;
+    height: 100%;
+    border: 1px solid #000000;
+}
+
+nav ul div li {
+    position: absolute;
+    text-align: center;
+    list-style: none;
+    height: 100%;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -139,7 +165,8 @@ nav ul li {
 }
 
 nav ul li a {
-    border: 1px solid #000000;
+    position: absolute;
+    height: 100%;
     text-decoration: none;
     color: #479679;
 }
