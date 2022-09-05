@@ -286,15 +286,668 @@ main section {
     position: relative;
     display: inline-block;
     width: 40%;
+    height: 200px;
     left: 134px;
     top: 231px;
-    right: 0px;
 }
 
+.section-why-should-you article h6 {
+    position: absolute;
+    width: 291px;
+    height: 28px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #373867;
+}
+
+.section-why-should-you article img {
+    position: absolute;
+    display: inline-block;
+    top: 48px;
+}
+
+.section-why-should-you article p {
+    position: absolute;
+    width: 350px;
+    height: 140px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    left: 100px;
+    top: 100px;
+    color: #373867;
+}
+
+.section-inscription-form {
+    position: relative;
+    width: 100%;
+    height: 839px;
+}
+
+.section-inscription-form h3 {
+    position: absolute;
+    width: 178px;
+    height: 28px;
+    left: 44px;
+    top: 62px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.section-inscription-form article form {
+    position: absolute;
+    display: inline-block;
+    left: 2.12%;
+    right: 51.59%;
+    width: 100%;
+    top: 160px;
+}
+
+.section-inscription-form article form input {
+    display: inline-block;
+    width: 45%;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border: 1px solid #373867;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-inscription-form article .contact-area {
+    position: absolute;
+    display: inline-block;
+    width: 1128px;
+    left: 27px;
+    top: 185px;
+    background: #FFFFFF;
+    border: 1px solid #373867;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-inscription-form article div {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    left: 27px;
+    top: 290px;
+}
+
+.section-inscription-form article div button {
+    position: relative;
+    display: inline-block;
+    width: 14%;
+    height: 32px;
+    left: 0px;
+    top: 0px;
+}
+
+.section-inscription-form article div p {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    height: 28px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.section-inscription-form article h6 {
+    position: absolute;
+    left: 45px;
+    right: 94.04%;
+    top: 400px;
+    bottom: 95.62%;
+    font-family: 'K2D';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+
+.section-inscription-form .text-box input {
+    position: absolute;
+    display: inline-block;
+    width: 1128px;
+    height: 200px;
+    left: 27px;
+    top: 480px;
+    background: #FFFFFF;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-company-mission {
+    position: relative;
+    width: 100%;
+    height: 839px;
+}
+
+.section-company-mission .article-title {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    left: 27px;
+}
+
+.section-company-mission .article-title h3 {
+    position: absolute;
+    width: 179px;
+    height: 30px;
+    left: 56px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20.5px;
+    line-height: 24px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.section-company-mission .article-title img {
+    position: absolute;
+    display: inline-block;
+    left: 1050px;
+    top: 0px;
+}
+
+.section-company-mission .article-second-paragraph {
+    position: relative;
+    left: 27px;
+    top: 100px;
+}
+
+.section-company-mission .article-second-paragraph h6 {
+    position: absolute;
+    width: 757px;
+    height: 45px;
+    left: 56px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30.7px;
+    line-height: 36px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #373867;
+}
+
+.section-company-mission .article-second-paragraph #company-mission-1 {
+    position: absolute;
+    width: 618px;
+    height: 55px;
+    left: 180px;
+    top: 25px;
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 67px;
+    text-align: center;
+    white-space: nowrap;
+    color: #151515;
+}
+
+.section-company-mission .article-second-paragraph #company-mission-2 {
+    position: absolute;
+    width: 1050px;
+    height: 95px;
+    left: 25px;
+    top: 70px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.7px;
+    line-height: 26px;
+    align-items: center;
+    text-align: center;
+    color: #1c1c37;
+}
+
+.section-company-mission .article-third-part {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    left: 27px;
+    top: 250px;
+}
+
+.section-company-mission .article-third-part h6 {
+    position: absolute;
+    width: 609px;
+    height: 43px;
+    left: 56px;
+    top: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 27.3px;
+    line-height: 32px;
+    align-items: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #373867;
+}
+
+.section-company-mission .article-third-part #dialogue {
+    position: absolute;
+    width: 1145px;
+    height: 21px;
+    left: 96px;
+    top: 85px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.25px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.section-company-mission .article-third-part #customer {
+    position: absolute;
+    width: 140px;
+    height: 21px;
+    left: 1000px;
+    top: 110px;
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15.5px;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.section-company-mission .article-fourth {
+    position: relative;
+    width: 90%;
+    left: 27px;
+    top: 400px;
+}
+
+.section-company-mission .article-fourth h5 {
+    position: absolute;
+    width: 116px;
+    height: 29px;
+    left: 56px;
+    top: 50px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    color: #373867;
+}
+
+.section-company-mission .article-fourth p {
+    position: absolute;
+    width: 769px;
+    height: 280px;
+    left: 56px;
+    top: 85px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    color: #373867;
+}
+
+.section-company-mission .article-fourth img {
+    position: absolute;
+    display: inline-block;
+    left: 830px;
+    top: 50px;
+    width: 363px;
+    height: 251px;
+}
+
+.section-our-products {
+    position: relative;
+    width: 100%;
+    height: 1200px;
+}
+
+.section-our-products h3 {
+    position: absolute;
+    width: 195px;
+    height: 36px;
+    left: 72px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.section-our-products article {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    height: 550px;
+    left: 134px;
+    top: 50px;
+}
+
+.section-our-products article img {
+    width: 390.3px;
+    height: 288.68px;
+}
+
+.section-our-products article .our-products-second-title {
+    position: absolute;
+    width: 273px;
+    height: 80px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22.9px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.section-our-products article .our-products-thrid-title {
+    position: absolute;
+    width: 320px;
+    height: 120px;
+    top: 350px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.3px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.section-our-products article ul {
+    position: absolute;
+    width: 320px;
+    height: 120px;
+    top: 440px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.7px;
+    line-height: 17px;
+    color: #000000;
+}
+
+
+.section-our-products article ul li {
+    list-style-type: circle;
+}
+
+.section-company {
+    position: relative;
+    width: 100%;
+    height: 1200px;
+}
+
+.section-company h3 {
+    position: absolute;
+    width: 607px;
+    height: 89px;
+    left: 72px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.section-company article {
+    position: relative;
+    display: inline-block;
+    height: 400px;
+    width: 85%;
+    left: 134px;
+    top: 50px;
+}
+
+.section-company article img {
+    display: inline-block;
+    width: 473px;
+    height: 304px;
+}
+
+.section-company article div {
+    display: inline-block;
+    width: 473px;
+    height: 304px;
+    left: 500px;
+    top: 0px;
+}
+
+.section-company article h6 {
+    display: inline-block;
+    width: 590px;
+    height: 53px;
+    top: 350px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+}
+
+.section-company article p {
+    display: inline-block;
+    width: 520px;
+    height: 168px;
+    top: 440px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.section-company article #group-of-people {
+    position: absolute;
+    width: 473px;
+    height: 304px;
+    left: 500px;
+    top: 0px;
+}
+
+.section-support {
+    position: relative;
+    width: 100%;
+    height: 1200px;
+}
+
+.section-support h3 {
+    position: absolute;
+    width: 223px;
+    height: 46px;
+    left: 72px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.section-support article {
+    position: relative;
+    display: inline-block;
+    width: 47%;
+    height: 400px;
+    left: 134px;
+    top: 50px;
+}
+
+.section-support article img {
+    width: 505px;
+    height: 282px;
+}
+
+.section-support article #image-support {
+    width: 437px;
+    height: 288px;
+}
+
+.section-support article p {
+    width: 448px;
+    height: 69px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+}
+
+.section-support h5 {
+    position: absolute;
+    width: 147px;
+    height: 27px;
+    left: 72px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    color: #000000;
+}
+
+.section-support article ol {
+    position: absolute;
+    display: inline-block;
+    width: 760px;
+    height: 184px;
+    left: 50px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+}
+
+.section-support article ol li {
+    list-style-type: decimal;
+}
+
+.section-support article ul {
+    position: absolute;
+    display: inline-block;
+    width: 87px;
+    height: 184px;
+    left: 900px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    color: #1d22ec;
+}
+
+.section-support #video-list {
+    display: inline-block;
+    width: 926px;
+    height: 184px;
+    left: 72px;
+}
+
+.section-support button {
+    position: absolute;
+    width: 480px;
+    height: 116px;
+    left: 350px;
+    top: 750px;
+    background: #98220d;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+    filter: blur(3px);
+    border-radius: 30px;
+}
+
+.section-support button a {
+    width: 423px;
+    height: 34px;
+    left: 550px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+    color: #ffffff;
+}
 
 footer {
     position: relative;
     left: 253px;
     width: 1259px;
     background-color: #ffffff;
+}
+
+footer .social-network {
+    position: absolute;
+    width: 100%;
+    height: 74px;
+    background-color: #373867;
+}
+
+footer .social-network a {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    height: 48px;
+    left: 355px;
+    top: 13px;
+}
+
+footer div p {
+    position: relative;
+    width: 461px;
+    height: 23px;
+    left: 350px;
+    top: 150px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
 }
