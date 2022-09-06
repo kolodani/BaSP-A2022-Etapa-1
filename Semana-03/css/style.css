@@ -6,7 +6,7 @@ html, body {
     overflow-x: hidden;
 }
 
-header {
+.header {
     display: inline;
     position: fixed;
     width: 1512px;
@@ -15,7 +15,7 @@ header {
     z-index: 2;
 }
 
-h1 {
+.header-title {
     position: absolute;
     width: 366px;
     height: 70px;
@@ -37,7 +37,7 @@ h1 {
     top: 10px;
 }
 
-aside {
+.aside {
     position: fixed;
     width: 253px;
     height: 891px;
@@ -117,7 +117,7 @@ aside {
     top: 639px;
 }
 
-aside p {
+.aside-paragraph {
     position: absolute;
     width: 232px;
     height: 13px;
@@ -130,7 +130,7 @@ aside p {
     line-height: 13px;
 }
 
-nav {
+.nav {
     position: fixed;
     width: 1259px;
     height: 55px;
@@ -141,7 +141,7 @@ nav {
     z-index: 2;
 }
 
-nav button {
+.nav-button {
     width: 206px;
     height: 43px;
     border: 0;
@@ -149,7 +149,7 @@ nav button {
     background-color: #373867;
 }
 
-nav button a {
+.nav-button-a {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -159,7 +159,7 @@ nav button a {
     text-decoration: none;
 }
 
-main {
+.main {
     position: relative;
     display: block;
     width: 1259px;
@@ -209,7 +209,7 @@ main section {
     z-index: 1;
 }
 
-.section-welcome article {
+.section-welcome-article {
     position: absolute;
     display: inline-block;
     width: 1090px;
@@ -219,14 +219,14 @@ main section {
     right: 0px;
 }
 
-.section-welcome article div {
+.section-welcome-article-div {
     display: inline-block;
     width: 50%;
     height: 100%;
-    padding-top: 40px;
+    padding-top: 90px;
 }
 
-.section-welcome article div p {
+.section-welcome-article-div-p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -236,9 +236,10 @@ main section {
     color: #373867;
 }
 
-.section-welcome article img {
+.section-welcome-article-img {
     position: absolute;
     display: inline-block;
+    padding-top: 72px;
 }
 
 .section-separator-1 {
@@ -255,7 +256,7 @@ main section {
     height: 1200px;
 }
 
-.section-application-features h3 {
+.section-application-features-h3 {
     position: absolute;
     width: 386px;
     height: 47px;
@@ -269,7 +270,7 @@ main section {
     color: #373867;
 }
 
-.section-application-features article {
+.section-application-features-article {
     position: relative;
     display: inline-block;
     width: 40%;
@@ -279,7 +280,7 @@ main section {
     right: 0px;
 }
 
-.section-application-features article h6 {
+.section-application-features-article-h6 {
     position: absolute;
     width: 132px;
     height: 28px;
@@ -294,7 +295,7 @@ main section {
     color: #373867;
 }
 
-.section-application-features article img {
+.section-application-features-article-img {
     position: absolute;
     display: inline-block;
     top: 48px;
@@ -326,7 +327,7 @@ main section {
     height: 1000px;
 }
 
-.section-why-should-you h3 {
+.section-why-should-you-h3 {
     position: absolute;
     width: 596px;
     height: 41px;
@@ -341,7 +342,7 @@ main section {
     color: #373867;
 }
 
-.section-why-should-you article {
+.section-why-should-you-article {
     position: relative;
     display: inline-block;
     width: 45%;
@@ -351,7 +352,7 @@ main section {
     padding-bottom: 55px;
 }
 
-.section-why-should-you article h6 {
+.section-why-should-you-article-h6 {
     position: absolute;
     width: 291px;
     height: 28px;
@@ -364,14 +365,14 @@ main section {
     color: #373867;
 }
 
-.section-why-should-you article img {
+.section-why-should-you-article-img {
     position: absolute;
     display: inline-block;
     top: 48px;
     left: 20px;
 }
 
-.section-why-should-you article p {
+.section-why-should-you-article-p {
     position: absolute;
     width: 350px;
     height: 140px;
@@ -410,7 +411,7 @@ main section {
     height: 1100px;
 }
 
-.section-inscription-form h3 {
+.section-inscription-form-h3 {
     position: absolute;
     width: 178px;
     height: 28px;
@@ -426,7 +427,7 @@ main section {
     text-decoration-line: underline;
 }
 
-.section-inscription-form article form {
+.section-inscription-form-article-form {
     position: absolute;
     display: inline-block;
     left: 7.12%;
@@ -435,7 +436,7 @@ main section {
     top: 160px;
 }
 
-.section-inscription-form article form input {
+.section-inscription-form-article-form-input {
     display: inline-block;
     width: 45%;
     left: 0px;
@@ -446,7 +447,7 @@ main section {
     border-radius: 4px;
 }
 
-.section-inscription-form article .contact-area {
+.section-inscription-form-article-contact-area {
     position: absolute;
     display: inline-block;
     width: 1080px;
@@ -458,7 +459,7 @@ main section {
     border-radius: 4px;
 }
 
-.section-inscription-form article div {
+.section-inscription-form-article-div {
     position: relative;
     display: inline-block;
     width: 45%;
@@ -466,21 +467,74 @@ main section {
     top: 290px;
 }
 
-.section-inscription-form article div button {
+/*  DESDE ACA  */
+.switch {
     position: relative;
     display: inline-block;
-    width: 52px;
-    height: 32px;
-    left: 0px;
-    top: 0px;
+    width: 60px;
+    height: 34px;
 }
 
-.section-inscription-form article div p {
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #373867;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #373867;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/*   HASTA ACA */
+
+.section-inscription-form-article-div-p {
     position: relative;
     display: inline-block;
     width: 15%;
     height: 28px;
-    top: -10px;
+    top: 6px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -490,7 +544,7 @@ main section {
     color: #000000;
 }
 
-.section-inscription-form article h6 {
+.section-inscription-form-article-h6 {
     position: absolute;
     left: 90px;
     right: 94.04%;
@@ -505,7 +559,7 @@ main section {
     color: #000000;
 }
 
-.section-inscription-form .text-box input {
+.section-inscription-form-text-box-input {
     position: absolute;
     display: inline-block;
     width: 1080px;
@@ -540,14 +594,14 @@ main section {
     height: 1100px;
 }
 
-.section-company-mission .article-title {
+.section-company-mission-article-title {
     position: relative;
     display: inline-block;
     width: 45%;
     left: 27px;
 }
 
-.section-company-mission .article-title h3 {
+.section-company-mission-article-title-h3 {
     position: absolute;
     width: 179px;
     height: 30px;
@@ -562,20 +616,20 @@ main section {
     text-decoration-line: underline;
 }
 
-.section-company-mission .article-title img {
+.section-company-mission-article-title-img {
     position: absolute;
     display: inline-block;
     left: 1050px;
     top: 0px;
 }
 
-.section-company-mission .article-second-paragraph {
+.section-company-mission-article-second-paragraph {
     position: relative;
     left: 27px;
     top: 100px;
 }
 
-.section-company-mission .article-second-paragraph h6 {
+.section-company-mission-article-second-paragraph-h6 {
     position: absolute;
     width: 757px;
     height: 45px;
@@ -593,7 +647,7 @@ main section {
     text-decoration-line: underline;
 }
 
-.section-company-mission .article-second-paragraph #company-mission-1 {
+.section-company-mission-article-second-paragraph-company-mission-1 {
     position: absolute;
     width: 618px;
     height: 55px;
@@ -609,7 +663,7 @@ main section {
     color: #151515;
 }
 
-.section-company-mission .article-second-paragraph #company-mission-2 {
+.section-company-mission-article-second-paragraph-company-mission-2 {
     position: absolute;
     width: 1050px;
     height: 95px;
@@ -625,7 +679,7 @@ main section {
     color: #1c1c37;
 }
 
-.section-company-mission .article-third-part {
+.section-company-mission-article-third-part {
     position: relative;
     display: inline-block;
     width: 45%;
@@ -633,7 +687,7 @@ main section {
     top: 250px;
 }
 
-.section-company-mission .article-third-part h6 {
+.section-company-mission-article-third-part-h6 {
     position: absolute;
     width: 609px;
     height: 43px;
@@ -651,7 +705,7 @@ main section {
     color: #373867;
 }
 
-.section-company-mission .article-third-part #dialogue {
+.section-company-mission-article-third-part-dialogue {
     position: absolute;
     width: 1145px;
     height: 21px;
@@ -668,7 +722,7 @@ main section {
     color: rgba(0, 0, 0, 0.8);
 }
 
-.section-company-mission .article-third-part #customer {
+.section-company-mission-article-third-part-customer {
     position: absolute;
     width: 140px;
     height: 21px;
@@ -694,14 +748,14 @@ main section {
     border-radius: 9px;
 }
 
-.section-company-mission .article-fourth {
+.section-company-mission-article-fourth {
     position: relative;
     width: 90%;
     left: 27px;
     top: 400px;
 }
 
-.section-company-mission .article-fourth h5 {
+.section-company-mission-article-fourth-h5 {
     position: absolute;
     width: 116px;
     height: 29px;
@@ -718,7 +772,7 @@ main section {
     color: #373867;
 }
 
-.section-company-mission .article-fourth p {
+.section-company-mission-article-fourth-p {
     position: absolute;
     width: 769px;
     height: 280px;
@@ -732,7 +786,7 @@ main section {
     color: #373867;
 }
 
-.section-company-mission .article-fourth img {
+.section-company-mission-article-fourth-img {
     position: absolute;
     display: inline-block;
     left: 830px;
@@ -755,7 +809,7 @@ main section {
     height: 1400px;
 }
 
-.section-our-products h3 {
+.section-our-products-h3 {
     position: absolute;
     width: 195px;
     height: 36px;
@@ -770,7 +824,7 @@ main section {
     text-decoration: underline;
 }
 
-.section-our-products article {
+.section-our-products-article {
     position: relative;
     display: inline-block;
     width: 40%;
@@ -779,12 +833,12 @@ main section {
     top: 50px;
 }
 
-.section-our-products article img {
+.section-our-products-article-img {
     width: 390.3px;
     height: 288.68px;
 }
 
-.section-our-products article .our-products-second-title {
+.section-our-products-article-our-products-second-title {
     position: absolute;
     width: 273px;
     height: 80px;
@@ -796,7 +850,7 @@ main section {
     color: #000000;
 }
 
-.section-our-products article .our-products-thrid-title {
+.section-our-products-article-our-products-thrid-title {
     position: absolute;
     width: 320px;
     height: 120px;
@@ -809,7 +863,7 @@ main section {
     color: #000000;
 }
 
-.section-our-products article ul {
+.section-our-products-article-ul {
     position: absolute;
     width: 320px;
     height: 120px;
@@ -822,7 +876,7 @@ main section {
     color: #000000;
 }
 
-.section-our-products article ul li {
+.section-our-products-article-ul-li {
     list-style-type: circle;
 }
 
@@ -840,7 +894,7 @@ main section {
     height: 1400px;
 }
 
-.section-company h3 {
+.section-company-h3 {
     position: absolute;
     width: 607px;
     height: 89px;
@@ -855,7 +909,7 @@ main section {
     text-decoration: underline;
 }
 
-.section-company article {
+.section-company-article {
     position: relative;
     display: inline-block;
     height: 400px;
@@ -864,14 +918,14 @@ main section {
     top: 100px;
 }
 
-.section-company article img {
+.section-company-article-img {
     display: inline-block;
     width: 473px;
     height: 304px;
     border: 0.35px solid #000000
 }
 
-.section-company article div {
+.section-company-article-div {
     display: inline-block;
     width: 580px;
     height: 304px;
@@ -879,7 +933,7 @@ main section {
     top: 0px;
 }
 
-.section-company article h6 {
+.section-company-article-h6 {
     position: absolute;
     width: 590px;
     height: 53px;
@@ -893,7 +947,7 @@ main section {
     color: #000000;
 }
 
-.section-company article p {
+.section-company-article-p {
     position: absolute;
     width: 520px;
     height: 168px;
@@ -907,7 +961,7 @@ main section {
     color: #000000;
 }
 
-.section-company article #group-of-people {
+.group-of-people {
     position: absolute;
     width: 473px;
     height: 304px;
@@ -915,7 +969,7 @@ main section {
     top: 0px;
 }
 
-.section-company article .company-second-title {
+.company-second-title {
     position: absolute;
     width: 590px;
     height: 53px;
@@ -929,7 +983,7 @@ main section {
     color: #000000;
 }
 
-.section-company article .company-second-paragraph {
+.company-second-paragraph {
     position: absolute;
     width: 520px;
     height: 168px;
@@ -954,10 +1008,10 @@ main section {
 .section-support {
     position: relative;
     width: 100%;
-    height: 1200px;
+    height: 1250px;
 }
 
-.section-support h3 {
+.section-support-h3 {
     position: absolute;
     width: 223px;
     height: 46px;
@@ -972,7 +1026,7 @@ main section {
     text-decoration: underline;
 }
 
-.section-support article {
+.section-support-article {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -981,26 +1035,27 @@ main section {
     top: 70px;
 }
 
-.section-support article img {
+.section-support-article-img {
     width: 505px;
     height: 282px;
     padding-right: 150px;
 }
 
-.section-support article #image-support {
+.image-support {
     width: 437px;
     height: 288px;
 }
 
-.section-support .section-support-texts {
+.section-support-texts {
     height: 200px;
 }
 
-.section-support article p {
+.section-support-article-p {
     position: absolute;
     width: 448px;
     height: 69px;
-    left: 24px;
+    left: 83px;
+    top: 381px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -1010,11 +1065,22 @@ main section {
     color: #000000;
 }
 
-.section-support article .section-suppot-image-text {
+.section-suppot-image-text {
+    position: absolute;
+    width: 448px;
+    height: 69px;
     left: 650px;
+    top: 381px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
 }
 
-.section-support h5 {
+.section-support-h5 {
     position: absolute;
     width: 147px;
     height: 27px;
@@ -1028,7 +1094,7 @@ main section {
     color: #000000;
 }
 
-.section-support article ol {
+.section-support-article-ol {
     position: absolute;
     display: inline-block;
     width: 760px;
@@ -1042,11 +1108,11 @@ main section {
     color: #000000;
 }
 
-.section-support article ol li {
+.section-support-article-ol-li {
     list-style-type: decimal;
 }
 
-.section-support article ul {
+.section-support-article-ul {
     position: absolute;
     display: inline-block;
     width: 87px;
@@ -1060,11 +1126,13 @@ main section {
     color: #1d22ec;
 }
 
-.section-support #video-list {
+.video-list {
+    position: absolute;
     display: inline-block;
     width: 926px;
     height: 184px;
-    left: 72px;
+    left: 103px;
+    top: 610px;
 }
 
 .section-support-red-button {
@@ -1080,7 +1148,7 @@ main section {
     z-index: 0;
 }
 
-.section-support button a {
+.section-support-button-a {
     position: absolute;
     width: 423px;
     height: 34px;
@@ -1097,7 +1165,7 @@ main section {
     z-index: 2;
 }
 
-.section-support .youtube-button {
+.youtube-button {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1106,7 +1174,7 @@ main section {
     z-index: 0;
 }
 
-footer {
+.footer {
     position: relative;
     left: 253px;
     width: 1259px;
@@ -1114,14 +1182,14 @@ footer {
     background-color: #ffffff;
 }
 
-footer .social-network {
+.social-network {
     position: absolute;
     width: 100%;
     height: 74px;
     background-color: #373867;
 }
 
-footer .social-network a {
+.social-network-a {
     position: relative;
     display: inline-block;
     width: 10%;
@@ -1130,7 +1198,7 @@ footer .social-network a {
     top: 13px;
 }
 
-footer div p {
+.footer-div-p {
     position: relative;
     width: 461px;
     height: 23px;
