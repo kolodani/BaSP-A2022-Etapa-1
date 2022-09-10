@@ -152,6 +152,435 @@ main section {
     margin: 1rem 2rem;
     color: #373867;
 }
-/*
-- - - - - - - - - - - - - - - - - - - - - HASTA ACA TODO PERFECTO - - - - - - - - - - - - - - - - - - - - - - - - 
-*/
+
+.section-inscription-form {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.section-inscription-form article {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 3rem 0rem;
+    justify-content: space-between;
+}
+
+.section-inscription-form-h3 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    white-space: nowrap;
+    color: #000000;
+    text-decoration-line: underline;
+    align-self: start;
+    margin: 3rem;
+}
+
+.section-inscription-form-article-form {
+    display: inline-block;
+    width: 95%;
+}
+
+.section-inscription-form-article-form-input {
+    display: inline-block;
+    width: 45%;
+    background: #FFFFFF;
+    border: 1px solid #373867;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-inscription-form-article-contact-area {
+    display: inline-block;
+    width: 1080px;
+    background: #FFFFFF;
+    border: 1px solid #373867;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-inscription-form-article-div {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+}
+
+.section-inscription-form-article-div-p {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    height: 28px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+.section-inscription-form-article-h6 {
+    right: 94.04%;
+    bottom: 95.62%;
+    font-family: 'K2D';
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+
+.section-inscription-form-text-box-input {
+    display: inline-block;
+    width: 1080px;
+    height: 323px;
+    background: #FFFFFF;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-inscription-form-submit {
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.section-company-mission {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-company-mission-article-title {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    align-self: flex-start;
+}
+
+.section-company-mission-article-title-h3 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 24px;
+    margin: 3rem;
+    white-space: nowrap;
+    color: #000000;
+    text-decoration-line: underline;
+}
+
+.section-company-mission-article-title-img {
+    width: 100px;
+    height: 100px;
+}
+
+.section-company-mission-article-second-paragraph {
+    position: relative;
+}
+
+.section-company-mission-article-second-paragraph-h6 {
+    width: 90%;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #373867;
+    text-decoration-line: underline;
+}
+
+.section-company-mission-article-second-paragraph-company-mission-1 {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 67px;
+    text-align: center;
+    white-space: nowrap;
+    color: #151515;
+}
+
+.section-company-mission-article-second-paragraph-company-mission-2 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 26px;
+    align-items: center;
+    text-align: center;
+    color: #1c1c37;
+}
+
+.section-company-mission-article-third-part {
+    position: relative;
+}
+
+.section-company-mission-article-third-part-h6 {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    align-items: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #373867;
+}
+
+.section-company-mission-article-third-part-dialogue {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    align-items: center;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.section-company-mission-article-third-part-customer {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15.5px;
+    line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.company-mission-box {
+    background: rgba(217, 217, 217, 0.2);
+    border-radius: 9px;
+}
+
+.section-company-mission-article-fourth {
+    position: relative;
+    width: 90%;
+}
+
+.section-company-mission-article-fourth-h5 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    align-items: center;
+    white-space: nowrap;
+    color: #373867;
+}
+
+.section-company-mission-article-fourth-p {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+    color: #373867;
+}
+
+.section-company-mission-article-fourth-img {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+}
+
+
+.section-our-products {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-our-products-h3 {
+    align-self: flex-start;
+    margin-left: 3rem;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 3.1rem;
+    white-space: nowrap;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.section-our-products-article {
+    position: relative;
+    display: inline-block;
+    height: 550px;
+}
+
+.section-our-products-article-img {
+    width: 300px;
+    height: 220px;
+}
+
+.section-our-products-article-our-products-second-title {
+    width: 273px;
+    height: 80px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 22.9px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.section-our-products-article-our-products-thrid-title {
+    width: 320px;
+    height: 120px;
+    font-family: 'Inter';
+    font-size: 18.3px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.section-our-products-article-ul {
+    width: 320px;
+    height: 120px;
+    font-family: 'Inter';
+    font-size: 13.7px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.section-our-products-article-ul-li {
+    list-style-type: circle;
+}
+
+.section-company {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-company-h3 {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+    white-space: nowrap;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.section-company-article {
+    position: relative;
+    display: inline-block;
+    width: 95%;
+}
+
+.section-company-article-img {
+    display: inline-block;
+    width: 235px;
+    height: 139px;
+    border: 0.35px solid #000000
+}
+
+.section-company-article-div {
+    display: inline-block;
+}
+
+.section-company-article-h6 {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: #000000;
+}
+
+.section-company-article-p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 24px;
+    color: #000000;
+}
+
+.section-support {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-support-h3 {
+    align-self: start;
+    margin-left: 3rem;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.section-support-article {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-support-article-img {
+    width: 295px;
+    height: 195px;
+}
+
+.section-support-article-p {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-align: center;
+    color: #000000;
+}
+
+.section-support-h5 {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+    color: #000000;
+}
+
+.section-support-article-ol {
+    display: inline-block;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    color: #000000;
+    list-style: decimal;
+}
+
+.section-support-article-ol-li {
+    list-style-type: decimal;
+}
+
+.section-support-article-ul-li {
+    color: #1d22ec;
+}
+
+.youtube-button {
+    width: 340px;
+    height: 82px;
+    background: #98230e;
+    box-shadow: 0px 2.5px 1.4px rgba(0, 0, 0, 0.25);
+    border-radius: 21px;
+    border: none;
+}
+
+.section-support-button-a {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+}
