@@ -1,1 +1,23 @@
- 
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    background-color: #373867;
+    height: 91px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: #46a07b;
+}
+
+header img {
+    display: flex;
+    height: 59px;
+    width: 67px;
+}

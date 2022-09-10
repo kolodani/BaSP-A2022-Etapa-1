@@ -6,14 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="./css/reset.css"/>
         <link rel="stylesheet" href="./css/style.css"/>
+        <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/aside.css">
+        <link rel="stylesheet" href="./css/nav.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/footer.css">
         <title>Trackgenix</title>
     </head>
     <body>
-        <header class="header">
-            <h1 class="header-title">
+        <header>
+            <img src="./Assets/Img/radium-rocket-logo.jpg" alt="logo of Radium Rocket"/>
+            <h1>
                 Trackgenix
             </h1>
-            <img class="header-image" src="./Assets/Img/radium-rocket-logo.jpg" alt="logo of Radium Rocket"/>
+            <img src="./Assets/Img/hamburguer-menu.png" alt="hamburguer-menu">
         </header>
         <aside class="aside">
             <form class="aside-form" action="">
@@ -85,36 +91,33 @@
         </nav>
         <main class="main">
             <section class="section-welcome">
-                <div class="section-welcome-box"></div>
-                <h2 class="section-welcome-title">
-                    Welcome
-                </h2>
-                <article class="section-welcome-article">
-                    <div class="section-welcome-article-div">
-                        <p class="section-welcome-article-div-p">
-                            “TRACKGENIX” is a revolutionary system designed by GigaTech Software Solutions SA.
-                        </p>
-                        <p class="section-welcome-article-div-p">
-                            This system allows efficient managing of projects, schedule flow, selected work teams and 
-                            much more.
-                        </p>
-                    </div>
-                    <img class="section-welcome-article-img" src="./Assets/Img/welcome-image.jpg" alt="Image of a 
-                    keyboad and programming code"/>
-                </article>
-                <div class="section-separator-1"></div>
+                <div class="section-welcome-box">
+                    <h2 class="section-welcome-title">
+                        Welcome
+                    </h2>
+                </div>
+                <div class="welcome-container">
+                    <p class="section-welcome-p">
+                        “TRACKGENIX” is a revolutionary system designed by GigaTech Software Solutions SA. This system 
+                        allows efficient managing of projects, schedule flow, selected work teams and much more.
+                    </p>
+                    <img class="section-welcome-img" src="./Assets/Img/welcome-image.jpg" alt="Image of a keyboad and 
+                    programming code"/>
+                </div>
+                <div class="section-separator"></div>
             </section>
             <section class="section-application-features">
-                <h3 class="section-application-features-h3">
-                    Application Features
-                </h3>
+                <div>
+                    <h3 class="section-h3">
+                        Application Features
+                    </h3>
+                </div>
                 <article class="section-application-features-article">
                     <h6 class="section-application-features-article-h6">
                         Hours Log
                     </h6>
                     <img class="section-application-features-article-img" src="./Assets/Img/hours-log-image.png" 
                     alt="Image of a businessman and a clock"/>
-                    <div class="application-features-green-box"></div>
                 </article>
                 <article class="section-application-features-article">
                     <h6 class="section-application-features-article-h6">
@@ -122,7 +125,6 @@
                     </h6>
                     <img class="section-application-features-article-img" src="./Assets/Img/reports-image.png" 
                     alt="image of a sheet of paper with reports"/>
-                    <div class="application-features-green-box"></div>
                 </article>
                 <article class="section-application-features-article">
                     <h6 class="section-application-features-article-h6">
@@ -130,7 +132,6 @@
                     </h6>
                     <img class="section-application-features-article-img" 
                     src="./Assets/Img/resource-management-image.png" alt="image of a businessman and a task scheme"/>
-                    <div class="application-features-green-box"></div>
                 </article>
                 <article class="section-application-features-article">
                     <h6 class="section-application-features-article-h6">
@@ -138,62 +139,72 @@
                     </h6>
                     <img class="section-application-features-article-img" src="./Assets/Img/multiple-roles-image.png" 
                     alt="image of three people"/>
-                    <div class="application-features-green-box"></div>
                 </article>
-                <div class="section-separator-2"></div>
+                <div class="section-separator"></div>
             </section>
             <section class="section-why-should-you">
-                <h3 class="section-why-should-you-h3">
-                    Why Should You Use Trackgenix?
-                </h3>
+                <div>
+                    <h3 class="section-h3">
+                        Why Should You Use Trackgenix?
+                    </h3>
+                </div>
                 <article class="section-why-should-you-article">
-                    <h6 class="section-why-should-you-article-h6">
-                        Productivity Booster
-                    </h6>
-                    <img class="section-why-should-you-article-img" src="./Assets/Img/productivity-booster-image.png" 
-                    alt="image of a clock and a gear"/>
-                    <p class="section-why-should-you-article-p">
-                        Be more productive using better Focus, Time Management,Organization and Efficiency.
-                    </p>
-                    <div class="why-should-green-box"></div>
+                    <div>
+                        <h6 class="section-why-should-you-article-h6">
+                            Productivity Booster
+                        </h6>
+                        <p class="section-why-should-you-article-p">
+                            Be more productive using better Focus, Time Management,Organization and Efficiency.
+                        </p>
+                    </div>
+                    <div class="section-why-should-you-article-img">
+                        <img src="./Assets/Img/productivity-booster-image.png" alt="image of a clock and a gear"/>
+                    </div>
                 </article>
                 <article class="section-why-should-you-article">
-                    <h6 class="section-why-should-you-article-h6">
-                        Work Traceability
-                    </h6>
-                    <img class="section-why-should-you-article-img" src="./Assets/Img/work-traceability-image.png" 
-                    alt="image of a file with a magnifying glass"/>
-                    <p class="section-why-should-you-article-p">
-                        Keep track of specs, changes, requests, results, and versions.
-                    </p>
-                    <div class="why-should-green-box"></div>
+                    <div>
+                        <h6 class="section-why-should-you-article-h6">
+                            Work Traceability
+                        </h6>
+                        <p class="section-why-should-you-article-p">
+                            Keep track of specs, changes, requests, results, and versions.
+                        </p>
+                    </div>
+                    <div class="section-why-should-you-article-img">
+                        <img src="./Assets/Img/work-traceability-image.png" 
+                        alt="image of a file with a magnifying glass"/>
+                    </div>
                 </article>
                 <article class="section-why-should-you-article">
-                    <h6 class="section-why-should-you-article-h6">
-                        Leadership and team management
-                    </h6>
-                    <img class="section-why-should-you-article-img" 
-                    src="./Assets/Img/leadership-and-team-management-image.png" alt="image of a businessman joined to 
-                    three more by a network"/>
-                    <p class="section-why-should-you-article-p">
-                        Lead a group of people in accomplishing a task or common goal.
-                        Effective team management involves supporting, communicating with
-                        and uplifting team members so they perform to the best of their
-                        abilities and continue to grow as professionals.
-                    </p>
-                    <div class="why-should-green-box"></div>
+                    <div>
+                        <h6 class="section-why-should-you-article-h6">
+                            Leadership and team management
+                        </h6>
+                        <p class="section-why-should-you-article-p">
+                            Lead a group of people in accomplishing a task or common goal.
+                            Effective team management involves supporting, communicating with
+                            and uplifting team members so they perform to the best of their
+                            abilities and continue to grow as professionals.
+                        </p>
+                    </div>
+                    <div class="section-why-should-you-article-img">
+                        <img src="./Assets/Img/leadership-and-team-management-image.png" alt="image of a businessman joined to three more by a network"/>
+                    </div>
                 </article>
                 <article class="section-why-should-you-article">
-                    <h6 class="section-why-should-you-article-h6">
-                        Decision making
-                    </h6>
-                    <img class="section-why-should-you-article-img" src="./Assets/Img/decision-making-image.png" alt="image of a businessman and a check box"/>
-                    <p class="section-why-should-you-article-p">
-                        Make better decisions for your business.
-                    </p>
-                    <div class="why-should-green-box"></div>
+                    <div>
+                        <h6 class="section-why-should-you-article-h6">
+                            Decision making
+                        </h6>
+                        <p class="section-why-should-you-article-p">
+                            Make better decisions for your business.
+                        </p>
+                    </div>
+                    <div class="section-why-should-you-article-img">
+                        <img src="./Assets/Img/decision-making-image.png" alt="image of a businessman and a check box"/>
+                    </div>
                 </article>
-                <div class="section-separator-3"></div>
+                <div class="section-separator"></div>
             </section>
             <section class="section-inscription-form">
                 <h3 class="section-inscription-form-h3">
@@ -245,7 +256,7 @@
                     </label>
                 </article>
                 <input class="section-inscription-form-submit" type="submit" value="submit"/>
-                <div class="section-separator-4"></div>
+                <div class="section-separator"></div>
             </section>
             <section class="section-company-mission">
                 <article class="section-company-mission-article-title">
@@ -302,7 +313,7 @@
                     <img class="section-company-mission-article-fourth-img" src="./Assets/Img/security-image.jpg" 
                     alt="image image with a cursor and the word security"/>
                 </article>
-                <div class="section-separator-5"></div>
+                <div class="section-separator"></div>
             </section>
             <section class="section-our-products">
                 <h3 class="section-our-products-h3">
@@ -391,7 +402,7 @@
                         </li>
                     </ul>
                 </article>
-                <div class="section-separator-6"></div>
+                <div class="section-separator"></div>
             </section>
             <section class="section-company">
                 <h3 class="section-company-h3">
@@ -442,7 +453,7 @@
                         </p>
                     </div>
                 </article>
-                <div class="section-separator-7"></div>
+                <div class="section-separator"></div>
             </section>
             <section class="section-support">
                 <h3 class="section-support-h3">
