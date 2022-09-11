@@ -56,8 +56,7 @@ main section {
 }
 
 .section-separator {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin: 3rem 0rem;
     width: 23rem;
     border: 0.1rem solid #000000;
 }
@@ -119,6 +118,10 @@ main section {
     justify-content: space-between;
 }
 
+.section-why-should-you-article-div {
+    width: 70%;
+}
+
 .section-why-should-you-article-h6 {
     margin-left: 2rem;
     align-self: center;
@@ -129,7 +132,6 @@ main section {
 }
 
 .section-why-should-you-article-img {
-    width: 40%;
     justify-content: center;
     align-content: center;
     rotate: 45deg;
@@ -140,10 +142,9 @@ main section {
 
 .section-why-should-you-article-img img {
     rotate: 315deg;
-    display: inline-block;
-    margin-top: 2rem;
-    width: 70px;
-    height: 70px;
+    margin: 1rem;
+    width: 60px;
+    height: 60px;
 }
 
 .section-why-should-you-article-p {
@@ -181,23 +182,25 @@ main section {
     margin: 3rem;
 }
 
+.text-boxes {
+    width: 100%;
+}
+
 .section-inscription-form-article-form {
-    display: inline-block;
     width: 95%;
 }
 
 .section-inscription-form-article-form-input {
-    display: inline-block;
-    width: 45%;
     background: #FFFFFF;
     border: 1px solid #373867;
     box-sizing: border-box;
     border-radius: 4px;
+    width: 100%;
+    height: 36px;
+    margin: 1rem 0rem;
 }
 
 .section-inscription-form-article-contact-area {
-    display: inline-block;
-    width: 1080px;
     background: #FFFFFF;
     border: 1px solid #373867;
     box-sizing: border-box;
@@ -210,33 +213,36 @@ main section {
     width: 45%;
 }
 
+.section-inscription-form .switch-and-text {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .section-inscription-form-article-div-p {
     position: relative;
     display: inline-block;
     width: 15%;
     height: 28px;
     font-weight: 500;
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
     white-space: nowrap;
     color: #000000;
 }
 
 .section-inscription-form-article-h6 {
-    right: 94.04%;
-    bottom: 95.62%;
     font-family: 'K2D';
     font-weight: 800;
     font-size: 16px;
     line-height: 21px;
-    text-align: center;
     color: #000000;
 }
 
 .section-inscription-form-text-box-input {
     display: inline-block;
-    width: 1080px;
     height: 323px;
+    width: 100%;
     background: #FFFFFF;
     border: 1px solid #e0e0e0;
     box-sizing: border-box;
@@ -255,13 +261,13 @@ main section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0rem 1rem;
 }
 
 .section-company-mission-article-title {
-    position: relative;
-    display: inline-block;
-    width: 45%;
+    display: flex;
     align-self: flex-start;
+    width: 100%;
 }
 
 .section-company-mission-article-title-h3 {
@@ -269,6 +275,7 @@ main section {
     font-size: 2.25rem;
     line-height: 24px;
     margin: 3rem;
+    padding: 1rem;
     white-space: nowrap;
     color: #000000;
     text-decoration-line: underline;
@@ -289,6 +296,7 @@ main section {
     font-size: 2.5rem;
     line-height: 2.8rem;
     letter-spacing: 0.08em;
+    margin-left: 1rem;
     text-transform: uppercase;
     color: #373867;
     text-decoration-line: underline;
@@ -308,6 +316,8 @@ main section {
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 26px;
+    width: 90%;
+    margin-left: 1rem;
     align-items: center;
     text-align: center;
     color: #1c1c37;
@@ -318,6 +328,7 @@ main section {
 }
 
 .section-company-mission-article-third-part-h6 {
+    padding: 1rem 0rem;
     font-weight: 600;
     font-size: 2rem;
     line-height: 2.3rem;
@@ -335,6 +346,8 @@ main section {
     align-items: center;
     text-align: center;
     color: rgba(0, 0, 0, 0.8);
+    width: 90%;
+    padding: 1rem 0rem;
 }
 
 .section-company-mission-article-third-part-customer {
@@ -342,9 +355,11 @@ main section {
     font-weight: 500;
     font-size: 15.5px;
     line-height: 18px;
-    text-align: center;
+    text-align: end;
     white-space: nowrap;
     color: rgba(0, 0, 0, 0.8);
+    margin-right: 3rem;
+    padding: 1rem 0rem;
 }
 
 .company-mission-box {
@@ -364,6 +379,7 @@ main section {
     align-items: center;
     white-space: nowrap;
     color: #373867;
+    padding: 1rem 0rem;
 }
 
 .section-company-mission-article-fourth-p {
@@ -371,6 +387,7 @@ main section {
     font-size: 1.5rem;
     line-height: 2.6rem;
     color: #373867;
+    padding: 1rem 0rem;
 }
 
 .section-company-mission-article-fourth-img {
@@ -378,7 +395,6 @@ main section {
     width: 300px;
     height: 200px;
 }
-
 
 .section-our-products {
     display: flex;
@@ -391,7 +407,7 @@ main section {
 
 .section-our-products-h3 {
     align-self: flex-start;
-    margin-left: 3rem;
+    padding: 3rem;
     font-family: 'Inter';
     font-weight: 700;
     font-size: 2.6rem;
@@ -404,17 +420,18 @@ main section {
 .section-our-products-article {
     position: relative;
     display: inline-block;
-    height: 550px;
+    padding-top: 3rem;
 }
 
 .section-our-products-article-img {
     width: 300px;
     height: 220px;
+    padding: 0rem 4rem;
 }
 
 .section-our-products-article-our-products-second-title {
-    width: 273px;
-    height: 80px;
+    width: 90%;
+    padding: 1rem 3rem;
     font-family: 'Inter';
     font-weight: 700;
     font-size: 22.9px;
@@ -423,8 +440,8 @@ main section {
 }
 
 .section-our-products-article-our-products-thrid-title {
-    width: 320px;
-    height: 120px;
+    width: 90%;
+    padding: 1rem 3rem;
     font-family: 'Inter';
     font-size: 18.3px;
     line-height: 22px;
@@ -432,8 +449,8 @@ main section {
 }
 
 .section-our-products-article-ul {
-    width: 320px;
-    height: 120px;
+    width: 90%;
+    padding: 1rem 5rem;
     font-family: 'Inter';
     font-size: 13.7px;
     line-height: 17px;
@@ -454,6 +471,8 @@ main section {
 }
 
 .section-company-h3 {
+    align-self: flex-start;
+    padding-left: 3rem;
     font-family: 'Inter';
     font-weight: 700;
     font-size: 2.6rem;
@@ -464,9 +483,18 @@ main section {
 }
 
 .section-company-article {
-    position: relative;
-    display: inline-block;
     width: 95%;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-company-article-2 {
+    width: 95%;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .section-company-article-img {
@@ -476,8 +504,20 @@ main section {
     border: 0.35px solid #000000
 }
 
+.section-company-article-img-2 {
+    display: inline-block;
+    width: 235px;
+    height: 139px;
+    border: 0.35px solid #000000
+}
+
 .section-company-article-div {
     display: inline-block;
+}
+
+.section-company-article-div-2 {
+    display: flex;
+    flex-direction: column;
 }
 
 .section-company-article-h6 {
@@ -493,7 +533,7 @@ main section {
     font-style: normal;
     font-weight: 400;
     font-size: 1.3rem;
-    line-height: 24px;
+    line-height: 1.6rem;
     color: #000000;
 }
 
@@ -521,11 +561,13 @@ main section {
     position: relative;
     display: inline-block;
     width: 100%;
+    padding: 3rem 0rem;
 }
 
 .section-support-article-img {
     width: 295px;
     height: 195px;
+    padding: 0rem 4rem;
 }
 
 .section-support-article-p {
@@ -544,6 +586,16 @@ main section {
     font-size: 2.8rem;
     line-height: 3.4rem;
     color: #000000;
+    align-self: start;
+    padding-left: 3rem;
+}
+
+.video-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3rem 0rem;
 }
 
 .section-support-article-ol {
@@ -555,13 +607,19 @@ main section {
     line-height: 2.3rem;
     color: #000000;
     list-style: decimal;
+    width: 70%;
+    padding-left: 3rem;
 }
 
-.section-support-article-ol-li {
-    list-style-type: decimal;
-}
-
-.section-support-article-ul-li {
+.section-support-article-ul {
+    display: inline-block;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    color: #000000;
+    width: 10%;
     color: #1d22ec;
 }
 
@@ -572,6 +630,7 @@ main section {
     box-shadow: 0px 2.5px 1.4px rgba(0, 0, 0, 0.25);
     border-radius: 21px;
     border: none;
+    margin: 2rem 0rem;
 }
 
 .section-support-button-a {
