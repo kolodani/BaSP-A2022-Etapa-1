@@ -1,6 +1,7 @@
 .aside {
     display: none;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 .aside {
