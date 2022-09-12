@@ -21,3 +21,9 @@ header img {
     height: 59px;
     width: 67px;
 }
+
+@media (min-width: 1200px) {
+    header h1 {
+        font-size: 6rem;
+    }
+}

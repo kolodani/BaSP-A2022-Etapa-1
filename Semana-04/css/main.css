@@ -103,8 +103,8 @@ main section {
 .section-application-features-article-img {
     background: rgba(170, 206, 155, 0.3);
     border-radius: 0.9rem;
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     margin: 0rem 4rem 1rem 4rem;
 }
 
@@ -115,6 +115,7 @@ main section {
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
+    display: flex;
 }
 
 .section-why-should-you-article {
@@ -123,6 +124,14 @@ main section {
     width: 80%;
     margin: 3rem 0rem;
     justify-content: space-around;
+}
+
+.section-h3-why {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #373867;
+    width: 100%;
+    text-align: center;
 }
 
 .section-why-should-you-article-div {
@@ -431,6 +440,7 @@ main section {
     white-space: nowrap;
     color: #000000;
     text-decoration: underline;
+    width: 100%;
 }
 
 .section-our-products-article {
@@ -699,7 +709,53 @@ main section {
 }
 
 @media (min-width: 1200px) {
-    main {
-        width: 80%;
+    .welcome-container {
+        flex-direction: row;
+    }
+
+    .section-why-should-you {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .section-why-should-you h3 {
+        width: 100%;
+    }
+
+    .section-why-should-you-article {
+        width: 45%;
+        height: 10rem;
+    }
+
+    .section-company-mission-article-fourth div {
+        width: 45%;
+    }
+
+    .section-company-mission-article-fourth {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section-our-products-article {
+        width: 45%;
+    }
+
+    .section-our-products {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .main h3 {
+        font-size: 3rem;
+    }
+
+    .main h5 {
+        font-size: 2.8rem;
+    }
+
+    .support-photos {
+        display: flex;
     }
 }
