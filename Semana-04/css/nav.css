@@ -30,7 +30,7 @@
 @media (min-width: 768px) {
     .nav {
         display: flex;
-        width: 70%;
-        margin-left: 30%;
+        width: max(70%, (100% - 35rem));
+        margin-left: min( 30%, 35rem);
     }
 }
