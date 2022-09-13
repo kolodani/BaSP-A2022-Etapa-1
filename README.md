@@ -12,10 +12,17 @@
       - [Week 1 of development](#week-1-of-development)
       - [Week 2 of development](#week-2-of-development)
       - [Week 3 of development](#week-3-of-development)
+      - [Week 4 of development](#week-4-of-development)
     - [*Learning content*](#learning-content)
       - [Week 1 of classes](#week-1-of-classes)
       - [Week 2 of classes](#week-2-of-classes)
       - [Week 3 of classes](#week-3-of-classes)
+      - [Week 4 of classes](#week-4-of-classes)
+  - [Results of the project](#results-of-the-project)
+      - [Week 1 of development](#week-1-of-development-1)
+      - [Week 2 of development](#week-2-of-development-1)
+      - [Week 3 of development](#week-3-of-development-1)
+      - [Week 4 of development](#week-4-of-development-1)
   - [Technologies used :exploding_head:](#technologies-used-exploding_head)
   - [Development tools :nerd_face:](#development-tools-nerd_face)
     - [Personal profile :see_no_evil:](#personal-profile-see_no_evil)
@@ -53,6 +60,10 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 - We add CSS on the landing page
 - Now with the styles the page is seen with the client's specifications
 
+#### Week 4 of development
+
+- We make the landing page responsive
+
 ### *Learning content*
 
 #### Week 1 of classes
@@ -70,6 +81,28 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 #### Week 3 of classes
 
 - We learned css, both classes, id, attributes, pseudo classes
+
+#### Week 4 of classes
+
+- We learned how to use flexbox to make our web page responsive
+
+## Results of the project
+
+#### Week 1 of development
+
+- <https://www.figma.com/file/TzLLCtCJVv63kbGI1VR4hT/UI-kit-RR-(BaSP)-Bestia-B?node-id=601%3A367>
+
+#### Week 2 of development
+
+- <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-02/index.html>
+
+#### Week 3 of development
+
+- <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html>
+
+#### Week 4 of development
+
+- <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html>
 
 ## Technologies used :exploding_head:
 
