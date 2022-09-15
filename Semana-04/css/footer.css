@@ -35,11 +35,11 @@
 
 @media (min-width: 768px) {
     .footer {
-        width: 70%;
-        margin-left: 30%;
+        margin-left: min(30%, 35rem);
         margin-top: 10rem;
     }
-    .hamburger{
+
+    .hamburger {
         visibility: hidden;
     }
 }
