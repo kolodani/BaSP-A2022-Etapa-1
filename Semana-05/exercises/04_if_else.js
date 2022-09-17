@@ -29,7 +29,7 @@ if (varRandom >= 0.5) {
 console.log('4b.');
 
 var age = Math.floor(Math.random() * 100);
-console.log('Age: ' + age);
+
 if (age < 2) {
     alert('Baby');
 } else if (age >= 2 && age <= 12) {
