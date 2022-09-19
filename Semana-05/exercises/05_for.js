@@ -20,7 +20,7 @@ for (var i = 0; i < fruits.length; i++) {
 console.log('5b.');
 
 for (var i = 0; i < fruits.length; i++) {
-    fruits[i]= fruits[i].substring(0, 1).toUpperCase() + fruits[i].substring(1, fruits[i].length);
+    fruits[i]= fruits[i].substring(0, 1).toUpperCase() + fruits[i].substring(1, fruits[i].length).toLowerCase();
     alert(fruits[i]);
 }
 

@@ -9,6 +9,7 @@ console.log('4.If Else');
 console.log('4a.');
 
 var varRandom = Math.random();
+console.log(varRandom);
 if (varRandom >= 0.5) {
     alert('Greater than 0,5');
 }else{
@@ -30,18 +31,20 @@ console.log('4b.');
 
 var age = Math.floor(Math.random() * 100);
 
+console.log('age: ', age);
+
 if (age < 2) {
-    alert('Baby');
+    alert('Bebe');
 } else if (age >= 2 && age <= 12) {
-    alert('Child');
+    alert('Niño');
 } else if (age >= 13 && age <= 19) {
-    alert('Teenager');
+    alert('Adolescente');
 } else if (age >= 20 && age <= 30) {
-    alert('Young');
+    alert('Joven');
 } else if (age >= 31 && age <= 60) {
-    alert('Adult');
+    alert('Adulto');
 } else if (age >= 61 && age <= 75) {
-    alert('Elderly');
+    alert('Adulto mayor');
 } else {
-    alert('Ancient');
+    alert('Anciano');
 }

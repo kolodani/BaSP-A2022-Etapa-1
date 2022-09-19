@@ -75,9 +75,14 @@ function validateNumber(a, b) {
         alert('One of the parameters is not a number');
         return NaN;
     }
+}
+
+function sum (a, b) {
+    validateNumber(a, b);
     if (!validateInteger(a) || !validateInteger(b)) {
         alert('One of the parameters is not an integer');
-        return Math.round(a) + Math.round(b);
+        a = Math.round(a);
+        b = Math.round(b);
     }
     return a + b;
 }
