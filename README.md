@@ -13,16 +13,19 @@
       - [Week 2 of development](#week-2-of-development)
       - [Week 3 of development](#week-3-of-development)
       - [Week 4 of development](#week-4-of-development)
+      - [Week 5 of development](#week-5-of-development)
     - [*Learning content*](#learning-content)
       - [Week 1 of classes](#week-1-of-classes)
       - [Week 2 of classes](#week-2-of-classes)
       - [Week 3 of classes](#week-3-of-classes)
       - [Week 4 of classes](#week-4-of-classes)
+      - [Week 5 of classes](#week-5-of-classes)
   - [Results of the project](#results-of-the-project)
       - [Week 1 of development](#week-1-of-development-1)
       - [Week 2 of development](#week-2-of-development-1)
       - [Week 3 of development](#week-3-of-development-1)
       - [Week 4 of development](#week-4-of-development-1)
+      - [Week 5 of development](#week-5-of-development-1)
   - [Technologies used :exploding_head:](#technologies-used-exploding_head)
   - [Development tools :nerd_face:](#development-tools-nerd_face)
     - [Personal profile :see_no_evil:](#personal-profile-see_no_evil)
@@ -64,6 +67,10 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 
 - We make the landing page responsive
 
+#### Week 5 of development
+
+- We carry out practices to get started with the use of javascript
+
 ### *Learning content*
 
 #### Week 1 of classes
@@ -86,6 +93,10 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 
 - We learned how to use flexbox to make our web page responsive
 
+#### Week 5 of classes
+
+- We learned the basics of programming and know more about the programming language that is javascript
+
 ## Results of the project
 
 #### Week 1 of development
@@ -104,10 +115,15 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 
 - <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html>
 
+#### Week 5 of development
+
+- <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html>
+
 ## Technologies used :exploding_head:
 
 - HTML
 - CSS
+- Javascript
 
 ## Development tools :nerd_face:
 

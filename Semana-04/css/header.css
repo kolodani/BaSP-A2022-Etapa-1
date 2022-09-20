@@ -1,12 +1,11 @@
 header {
     position: sticky;
-    top: 0;
     display: flex;
-    background-color: #373867;
-    height: 91px;
-    width: 100%;
+    top: 0;
     justify-content: space-between;
     align-items: center;
+    height: 91px;
+    background-color: #373867;
     z-index: 1;
 }
 
@@ -17,9 +16,14 @@ header h1 {
 }
 
 header img {
-    display: flex;
     height: 59px;
     width: 67px;
+}
+
+@media (min-width: 768px) {
+    .hamburger {
+        visibility: hidden;
+    }
 }
 
 @media (min-width: 1200px) {
