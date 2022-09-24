@@ -88,6 +88,14 @@ main section {
     background-color: #AACE9B;
 }
 
+.errorRed {
+    border: 2px solid red;
+} 
+
+.okGreen {
+    border: 2px solid green;
+}
+
 @media (min-width: 768px) {
     main {
         width: 70%;
