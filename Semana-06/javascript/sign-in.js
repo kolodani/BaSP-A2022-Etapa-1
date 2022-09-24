@@ -34,25 +34,35 @@ window.onload = function () {
 		}
 	}
 
-	// on blur event listener for email
-	email.addEventListener("blur", function () {
+	// on blur event for email
+	email.onblur = function () {
 		if (emptyField(email)) {
-            email.classList.add("errorRed");
+			email.classList.add("errorRed");
 		} else if (!validateEmail(email)) {
-            email.classList.add("errorRed");
+			email.classList.add("errorRed");
 		} else {
-            email.classList.add("okGreen");
+			email.classList.add("okGreen");
 		}
-	});
+	};
 
-	// on blur event listener for password
-	password.addEventListener("blur", function () {
+	// on blur event for password
+	password.onblur = function () {
 		if (emptyField(password)) {
-            password.classList.add("errorRed");
+			password.classList.add("errorRed");
 		} else if (!validatePassword(password)) {
-            password.classList.add("errorRed");
+			password.classList.add("errorRed");
 		} else {
-            password.classList.add("okGreen");
+			password.classList.add("okGreen");
 		}
-	});
+	};
+
+	// on focus event for email
+	email.onfocus = function () {
+		email.classList.remove("errorRed", "okGreen");
+	};
+
+	// on focus event for password
+	password.onfocus = function () {
+		password.classList.remove("errorRed", "okGreen");
+	};
 }
