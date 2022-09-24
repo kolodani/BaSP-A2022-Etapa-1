@@ -1,4 +1,5 @@
 window.onload = function () {
+    // create variables
 	var name = document.getElementById("name");
 	var lastName = document.getElementById("lastName");
 	var DNI = document.getElementById("DNI");
