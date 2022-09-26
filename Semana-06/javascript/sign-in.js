@@ -2,12 +2,37 @@ window.onload = function () {
 	var email = document.getElementById("emailUser");
 	var password = document.getElementById("passwordUser");
 	var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-
-	// set attributes
+	var continueButton = document.getElementById("continueButton");
+	var pEmail = document.createElement("p");
+	var pPassword = document.createElement("p");
+	var emailCorrect = false;
+	var passwordCorrect = false;
+	var emailError = "Email is empty";
+	var passwordError = "Password is empty";
+	
 	email.setAttribute("placeholder", "Email");
 	password.setAttribute("placeholder", "Password");
+	
+	function emailTrue() {
+		emailCorrect = true;
+	}
+	function emailFalse() {
+		emailCorrect = false;
+	}
+	function passwordTrue() {
+		passwordCorrect = true;
+	}
+	function passwordFalse() {
+		passwordCorrect = false;
+	}
+	
+	function errorInEmail(a) {
+		emailError = a;
+	}
+	function errorInPassword(a) {
+		passwordError = a;
+	}
 
-	// validar email
 	function validateEmail(email) {
 		if (emailExpression.test(email.value)) {
 			return true;
@@ -16,7 +41,6 @@ window.onload = function () {
 		}
 	}
 
-	// validar password
 	function validatePassword(password) {
 		if (password.value.length > 7) {
 			return true;
@@ -25,7 +49,6 @@ window.onload = function () {
 		}
 	}
 
-	// casilla de vacia
 	function emptyField(field) {
 		if (field.value == "") {
 			return true;
@@ -34,35 +57,64 @@ window.onload = function () {
 		}
 	}
 
-	// on blur event for email
 	email.onblur = function () {
 		if (emptyField(email)) {
 			email.classList.add("errorRed");
+			pEmail.innerHTML = "Email is required";
+			email.parentNode.appendChild(pEmail);
+			emailFalse();
+			errorInEmail(pEmail.innerHTML);
 		} else if (!validateEmail(email)) {
 			email.classList.add("errorRed");
+			pEmail.innerHTML = "Email is not valid";
+			email.parentNode.appendChild(pEmail);
+			emailFalse();
+			errorInEmail(pEmail.innerHTML);
 		} else {
 			email.classList.add("okGreen");
+			pEmail.innerHTML = "Email is valid";
+			email.parentNode.appendChild(pEmail);
+			emailTrue();
+			errorInEmail(pEmail.innerHTML);
 		}
 	};
 
-	// on blur event for password
 	password.onblur = function () {
 		if (emptyField(password)) {
 			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password is required";
+			password.parentNode.appendChild(pPassword);
+			passwordFalse();
+			errorInPassword(pPassword.innerHTML);
 		} else if (!validatePassword(password)) {
 			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password is not valid";
+			password.parentNode.appendChild(pPassword);
+			passwordFalse();
+			errorInPassword(pPassword.innerHTML);
 		} else {
 			password.classList.add("okGreen");
+			pPassword.innerHTML = `Password is valid`;
+			password.parentNode.appendChild(pPassword);
+			passwordTrue();
+			errorInPassword(pPassword.innerHTML);
 		}
 	};
 
-	// on focus event for email
 	email.onfocus = function () {
 		email.classList.remove("errorRed", "okGreen");
 	};
 
-	// on focus event for password
 	password.onfocus = function () {
 		password.classList.remove("errorRed", "okGreen");
+	};
+	
+	// on submit event
+	continueButton.onclick = function () {
+		if (emailCorrect && passwordCorrect) {
+			alert("Welcome to the system\n" + "Email: " + email.value + "\nPassword: " + password.value);
+		} else {
+			alert("Please, check your data\n" + "Email: " + emailError + "\nPassword: " + passwordError);
+		}
 	};
 }
