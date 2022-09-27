@@ -91,12 +91,22 @@ main section {
 }
 
 @media (min-width: 1200px) {
-    .greyBox{
+    .greyBox {
         width: 60%;
         height: 80%;
     }
-    
+
     .textsBox {
         width: 45%;
+    }
+
+    .formSignUp {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .textsBox input {
+        width: 100%;
     }
 }

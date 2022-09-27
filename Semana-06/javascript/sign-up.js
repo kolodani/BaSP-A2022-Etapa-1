@@ -11,6 +11,7 @@ window.onload = function () {
 	var email = document.getElementById("email");
 	var password = document.getElementById("password");
 	var confirmPassword = document.getElementById("confirmPassword");
+	var continueButton = document.getElementById("continueButton");
 
 	// expresion to compare
 	var nameExpression = /^[a-zA-Z]{3,}$/;
@@ -234,15 +235,6 @@ window.onload = function () {
 		}
 	}
 
-	// validate date of birth
-	function validateDateOfBirth(dateOfBirth) {
-		if (dateOfBirthExpression.test(dateOfBirth.value)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	// validate phone number, only numbers
 	function validatePhoneNumber(phoneNumber) {
 		if (phoneNumberExpression.test(phoneNumber.value)) {
@@ -260,38 +252,6 @@ window.onload = function () {
 			return false;
 		}
 	}
-	// TODO ********************************************************************************
-	// check if address have a space
-	function validateAddressSpace(address) {
-		if (address.value.indexOf(" ") >= 0) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// check if address have a word in first position
-	function validateAddressFirstWord(address) {
-		var space = address.value.indexOf(" ");
-		var firstWord = address.value.substring(0, space);
-		if (addressExpressionWord.test(firstWord)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// check if address have a number in second position
-	function validateAddressSecondNumber(address) {
-		var space = address.value.indexOf(" ");
-		var secondNumber = address.value.substring(space + 1, address.value.length);
-		if (addressExpressionNumber.test(secondNumber)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	// TODO ********************************************************************************
 
 	// validate location, only letters
 	function validateLocality(locality) {
@@ -456,15 +416,17 @@ window.onload = function () {
 
 	// on blur date of birth
 	dateOfBirth.onblur = function () {
+		var splitvalue = dateOfBirth.value.split("-");
+		var year = splitvalue[0];
 		if (emptyField(dateOfBirth)) {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is requited";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
 			dateOfBirthFalse();
 			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
-		} else if (!validateDateOfBirth(dateOfBirth)) {
+		} else if (year < 1922) {
 			dateOfBirth.classList.add("errorRed");
-			pDateOfBirth.innerHTML = "Date of birth is not valid";
+			pDateOfBirth.innerHTML = "Date of birth is not valid (too old)";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
 			dateOfBirthFalse();
 			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
@@ -508,30 +470,33 @@ window.onload = function () {
 
 	// on blur address
 	address.onblur = function () {
+		var splitvalue = address.value.split(" ");
+		var number = splitvalue[splitvalue.length - 1];
+		var wordsCount = 0;
+		console.log(splitvalue);
+		for (var i = 0; i < splitvalue.length - 1; i++) {
+			if (typeof splitvalue[i] === "string") {
+				wordsCount++;
+			}
+		}
 		if (emptyField(address)) {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is requited";
 			address.parentNode.appendChild(pAddress);
 			addressFalse();
 			addressErrorSet(pAddress.innerHTML);
-		} else if (validateAddressSpace(address)) {
-            address.classList.add("errorRed");
-            pAddress.innerHTML = "Address is not a only one word";
-            address.parentNode.appendChild(pAddress);
-            addressFalse();
-            addressErrorSet(pAddress.innerHTML);
-        } else if (!validateAddressFirstWord(address)) {
-            address.classList.add("errorRed");
-            pAddress.innerHTML = "Address is not start with a word";
-            address.parentNode.appendChild(pAddress);
-            addressFalse();
-            addressErrorSet(pAddress.innerHTML);
-        } else if (!validateAddressSecondNumber(address)) {
-            address.classList.add("errorRed");
-            pAddress.innerHTML = "Address is not end with a number";
-            address.parentNode.appendChild(pAddress);
-            addressFalse();
-            addressErrorSet(pAddress.innerHTML);
+		} else if (isNaN(number) == true) {
+			address.classList.add("errorRed");
+			pAddress.innerHTML = "Address don't have a number";
+			address.parentNode.appendChild(pAddress);
+			addressFalse();
+			addressErrorSet(pAddress.innerHTML);
+		} else if ((wordsCount != splitvalue.length - 1) || (wordsCount == 0)) {
+			address.classList.add("errorRed");
+			pAddress.innerHTML = "Address is not valid";
+			address.parentNode.appendChild(pAddress);
+			addressFalse();
+			addressErrorSet(pAddress.innerHTML);
         } else {
             address.classList.add("okGreen");
             pAddress.innerHTML = "Address is valid";
@@ -719,5 +684,25 @@ window.onload = function () {
 	confirmPassword.onfocus = function () {
 		confirmPassword.classList.remove("errorRed", "okGreen");
 	};
+	
+	// on submit event
+	continueButton.onclick = function () {
+		if (
+			nameCorrect &&
+			lastNameCorrect &&
+			IDCorrect &&
+			dateOfBirthCorrect &&
+			phoneNumberCorrect &&
+			addressCorrect &&
+			localityCorrect &&
+			postalCodeCorrect &&
+			emailCorrect &&
+			passwordCorrect &&
+			confirmPasswordCorrect
+			) {
+				alert("Welcome to our website" + "\nName: " + name.value + "\nLast name: " + lastName.value + "\nID: " + ID.value + "\nDate of birth: " + dateOfBirth.value + "\nPhone number: " + phoneNumber.value + "\nAddress: " + address.value + "\nLocality: " + locality.value + "\nPostal code: " + postalCode.value + "\nEmail: " + email.value + "\nPassword: " + password.value + "\nConfirm password: " + confirmPassword.value);
+			} else {
+				alert("Please, check your data" + "\nName: " + nameError + "\nLast name: " + lastNameError + "\nID: " + IDError + "\nDate of birth: " + dateOfBirthError + "\nPhone number: " + phoneNumberError + "\nAddress: " + addressError + "\nLocality: " + localityError + "\nPostal code: " + postalCodeError + "\nEmail: " + emailError + "\nPassword: " + passwordError + "\nConfirm password: " + confirmPasswordError);
+			}
+	};
 };
-
