@@ -80,7 +80,38 @@ window.onload = function () {
 	};
 
 	password.onblur = function () {
-		if (emptyField(password)) {
+		var passwordSlipt = password.value.split("");
+		var space = 0, number = 0, letter = 0, special = 0;
+		for (var i = 0; i < passwordSlipt.length; i++) {
+			if (passwordSlipt[i] == " ") {
+				space++;
+			} else if (passwordSlipt[i].toUpperCase() !== passwordSlipt[i].toLowerCase()) {
+				letter++;
+			} else if (passwordSlipt[i] == parseInt(passwordSlipt[i])) {
+				number++;
+			}else {
+				special++;
+			}
+		}
+		if ((letter + number) < passwordSlipt.length) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password invalid, contains special characters";
+			password.parentNode.appendChild(pPassword);
+			passwordFalse();
+			errorInPassword(pPassword.innerHTML);
+		} else if (letter == 0) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password invalid, contains no letters";
+			password.parentNode.appendChild(pPassword);
+			passwordFalse();
+			errorInPassword(pPassword.innerHTML);
+		} else if (number == 0) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password invalid, contains no numbers";
+			password.parentNode.appendChild(pPassword);
+			passwordFalse();
+			errorInPassword(pPassword.innerHTML);
+		} else if (emptyField(password)) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password is required";
 			password.parentNode.appendChild(pPassword);

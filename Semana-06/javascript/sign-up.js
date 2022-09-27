@@ -14,17 +14,7 @@ window.onload = function () {
 	var continueButton = document.getElementById("continueButton");
 
 	// expresion to compare
-	var nameExpression = /^[a-zA-Z]{3,}$/;
-	var lastNameExpression = /^[a-zA-Z]{3,}$/;
-	var IDExpression = /^[0-9]{8,}$/;
-	var dateOfBirthExpression = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
-	var phoneNumberExpression = /^[0-9]{8,}$/;
-	var addressExpressionWord = /^[a-zA-Z]{5,}$/;
-	var addressExpressionNumber = /^[0-9]{1,}$/;
-	var localityExpression = /^[a-zA-Z]{3,}$/;
-	var postalCodeExpression = /^[0-9]{4,}$/;
 	var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-	var passwordExpression = /^[a-zA-Z0-9]{8,}$/;
 
 	// create elements
 	var pName = document.createElement("p");
@@ -79,71 +69,11 @@ window.onload = function () {
 	confirmPassword.setAttribute("placeholder", "Confirm Password");
 
 	// functions to set boolean variables
-	function nameTrue() {
-		nameCorrect = true;
+	function toTrue(a) {
+		a = true;
 	}
-	function nameFalse() {
-		nameCorrect = false;
-	}
-	function lastNameTrue() {
-		lastNameCorrect = true;
-	}
-	function lastNameFalse() {
-		lastNameCorrect = false;
-	}
-	function IDTrue() {
-		IDCorrect = true;
-	}
-	function IDFalse() {
-		IDCorrect = false;
-	}
-	function dateOfBirthTrue() {
-		dateOfBirthCorrect = true;
-	}
-	function dateOfBirthFalse() {
-		dateOfBirthCorrect = false;
-	}
-	function phoneNumberTrue() {
-		phoneNumberCorrect = true;
-	}
-	function phoneNumberFalse() {
-		phoneNumberCorrect = false;
-	}
-	function addressTrue() {
-		addressCorrect = true;
-	}
-	function addressFalse() {
-		addressCorrect = false;
-	}
-	function localityTrue() {
-		localityCorrect = true;
-	}
-	function localityFalse() {
-		localityCorrect = false;
-	}
-	function postalCodeTrue() {
-		postalCodeCorrect = true;
-	}
-	function postalCodeFalse() {
-		postalCodeCorrect = false;
-	}
-	function emailTrue() {
-		emailCorrect = true;
-	}
-	function emailFalse() {
-		emailCorrect = false;
-	}
-	function passwordTrue() {
-		passwordCorrect = true;
-	}
-	function passwordFalse() {
-		passwordCorrect = false;
-	}
-	function confirmPasswordTrue() {
-		confirmPasswordCorrect = true;
-	}
-	function confirmPasswordFalse() {
-		confirmPasswordCorrect = false;
+	function toFalse(a) {
+		a = false;
 	}
 
 	// functions to set error messages
@@ -181,11 +111,36 @@ window.onload = function () {
 		confirmPasswordError = a;
 	}
 
-	// validate name, only letters
-	function validateName(name) {
-		if (nameExpression.test(name.value)) {
+	// validate is only letters
+	function onlyLetters(a) {
+		var aSplit = a.value.split("");
+		var letters = 0;
+		for (var i = 0; i < aSplit.length; i++) {
+			if (aSplit[i].toLowerCase() != aSplit[i].toUpperCase()) {
+				letters++;
+			}
+		}
+		if (letters == aSplit.length) {
 			return true;
-		} else {
+		}
+		else {
+			return false;
+		}
+	}
+	
+	// validate is only numbers
+	function onlyNumbers(a) {
+		var aSplit = a.value.split("");
+		var numbers = 0;
+		for (var i = 0; i < aSplit.length; i++) {
+			if (aSplit[i] == parseInt(aSplit[i])) {
+				numbers++;
+			}
+		}
+		if (numbers == aSplit.length) {
+			return true;
+		}
+		else {
 			return false;
 		}
 	}
@@ -193,15 +148,6 @@ window.onload = function () {
 	// validate name length > 3
 	function validateNameLength(name) {
 		if (name.value.length > 3) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate last name, only letters
-	function validateLastName(lastName) {
-		if (lastNameExpression.test(lastName.value)) {
 			return true;
 		} else {
 			return false;
@@ -217,15 +163,6 @@ window.onload = function () {
 		}
 	}
 
-	// validate ID, only numbers
-	function validateDNI(ID) {
-		if (IDExpression.test(ID.value)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	// validate ID length > 7
 	function validateDNILength(ID) {
 		if (ID.value.length > 7) {
@@ -235,27 +172,9 @@ window.onload = function () {
 		}
 	}
 
-	// validate phone number, only numbers
-	function validatePhoneNumber(phoneNumber) {
-		if (phoneNumberExpression.test(phoneNumber.value)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	// validate phone number length = 10
 	function validatePhoneNumberLength(phoneNumber) {
 		if (phoneNumber.value.length == 10) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate location, only letters
-	function validateLocality(locality) {
-		if (localityExpression.test(locality.value)) {
 			return true;
 		} else {
 			return false;
@@ -333,25 +252,25 @@ window.onload = function () {
 			name.classList.add("errorRed");
 			pName.innerHTML = "Name is requited";
 			name.parentNode.appendChild(pName);
-			nameFalse();
+			toFalse(nameCorrect);
 			nameErrorSet(pName.innerHTML);
-		} else if (!validateName(name)) {
+		} else if (!onlyLetters(name)) {
 			name.classList.add("errorRed");
-			pName.innerHTML = "Name is not valid";
+			pName.innerHTML = "Name is not valid, only letters";
 			name.parentNode.appendChild(pName);
-			nameFalse();
+			toFalse(nameCorrect);
 			nameErrorSet(pName.innerHTML);
 		} else if (!validateNameLength(name)) {
 			name.classList.add("errorRed");
 			pName.innerHTML = "Name is too short";
 			name.parentNode.appendChild(pName);
-			nameFalse();
+			toFalse(nameCorrect);
 			nameErrorSet(pName.innerHTML);
 		} else {
 			name.classList.add("okGreen");
 			pName.innerHTML = "Name is valid";
 			name.parentNode.appendChild(pName);
-			nameTrue();
+			toTrue(nameCorrect);
 			nameErrorSet(pName.innerHTML);
 		}
 	};
@@ -362,25 +281,25 @@ window.onload = function () {
 			lastName.classList.add("errorRed");
 			pLastName.innerHTML = "Last name is requited";
 			lastName.parentNode.appendChild(pLastName);
-			lastNameFalse();
+			toFalse(lastNameCorrect);
 			lastNameErrorSet(pLastName.innerHTML);
-		} else if (!validateLastName(lastName)) {
+		} else if (!onlyLetters(lastName)) {
 			lastName.classList.add("errorRed");
-			pLastName.innerHTML = "Last name is not valid";
+			pLastName.innerHTML = "Name is not valid, only letters";
 			lastName.parentNode.appendChild(pLastName);
-			lastNameFalse();
+			toFalse(lastNameCorrect);
 			lastNameErrorSet(pLastName.innerHTML);
 		} else if (!validateLastNameLength(lastName)) {
 			lastName.classList.add("errorRed");
 			pLastName.innerHTML = "Last name is too short";
 			lastName.parentNode.appendChild(pLastName);
-			lastNameFalse();
+			toFalse(lastNameCorrect);
 			lastNameErrorSet(pLastName.innerHTML);
 		} else {
 			lastName.classList.add("okGreen");
 			pLastName.innerHTML = "Last name is valid";
 			lastName.parentNode.appendChild(pLastName);
-			lastNameTrue();
+			toTrue(lastNameCorrect);
 			lastNameErrorSet(pLastName.innerHTML);
 		}
 	};
@@ -391,25 +310,25 @@ window.onload = function () {
 			ID.classList.add("errorRed");
 			pID.innerHTML = "ID is requited";
 			ID.parentNode.appendChild(pID);
-			IDFalse();
+			toFalse(IDCorrect);
 			IDErrorSet(pID.innerHTML);
-		} else if (!validateDNI(ID)) {
+		} else if (!onlyNumbers(ID)) {
 			ID.classList.add("errorRed");
-			pID.innerHTML = "ID is not valid";
+			pID.innerHTML = "ID is not valid, only numbers";
 			ID.parentNode.appendChild(pID);
-			IDFalse();
+			toFalse(IDCorrect);
 			IDErrorSet(pID.innerHTML);
 		} else if (!validateDNILength(ID)) {
 			ID.classList.add("errorRed");
 			pID.innerHTML = "ID is too short";
 			ID.parentNode.appendChild(pID);
-			IDFalse();
+			toFalse(IDCorrect);
 			IDErrorSet(pID.innerHTML);
 		} else {
 			ID.classList.add("okGreen");
 			pID.innerHTML = "ID is valid";
 			ID.parentNode.appendChild(pID);
-			IDTrue();
+			toTrue(IDCorrect);
 			IDErrorSet(pID.innerHTML);
 		}
 	};
@@ -422,19 +341,19 @@ window.onload = function () {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is requited";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
-			dateOfBirthFalse();
+			toFalse(dateOfBirthCorrect);
 			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
 		} else if (year < 1922) {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is not valid (too old)";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
-			dateOfBirthFalse();
+			toFalse(dateOfBirthCorrect);
 			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
 		} else {
 			dateOfBirth.classList.add("okGreen");
 			pDateOfBirth.innerHTML = "Date of birth is valid";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
-			dateOfBirthTrue();
+			toTrue(dateOfBirthCorrect);
 			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
 		}
 	};
@@ -445,25 +364,25 @@ window.onload = function () {
 			phoneNumber.classList.add("errorRed");
 			pPhoneNumber.innerHTML = "Phone number is requited";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			phoneNumberFalse();
+			toFalse(phoneNumberCorrect);
 			phoneNumberErrorSet(pPhoneNumber.innerHTML);
-		} else if (!validatePhoneNumber(phoneNumber)) {
+		} else if (!onlyNumbers(phoneNumber)) {
 			phoneNumber.classList.add("errorRed");
-			pPhoneNumber.innerHTML = "Phone number is not valid";
+			pPhoneNumber.innerHTML = "Phone number is not valid, only numbers";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			phoneNumberFalse();
+			toFalse(phoneNumberCorrect);
 			phoneNumberErrorSet(pPhoneNumber.innerHTML);
 		} else if (!validatePhoneNumberLength(phoneNumber)) {
 			phoneNumber.classList.add("errorRed");
 			pPhoneNumber.innerHTML = "Phone number is too short";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			phoneNumberFalse();
+			toFalse(phoneNumberCorrect);
 			phoneNumberErrorSet(pPhoneNumber.innerHTML);
 		} else {
 			phoneNumber.classList.add("okGreen");
 			pPhoneNumber.innerHTML = "Phone number is valid";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			phoneNumberTrue();
+			toTrue(phoneNumberCorrect);
 			phoneNumberErrorSet(pPhoneNumber.innerHTML);
 		}
 	};
@@ -473,35 +392,48 @@ window.onload = function () {
 		var splitvalue = address.value.split(" ");
 		var number = splitvalue[splitvalue.length - 1];
 		var wordsCount = 0;
-		console.log(splitvalue);
+		var notWords = 0;
 		for (var i = 0; i < splitvalue.length - 1; i++) {
 			if (typeof splitvalue[i] === "string") {
 				wordsCount++;
+			}
+			var letters = splitvalue[i].split("");
+			for (var j = 0; j < letters.length; j++) {
+				if (letters[j].toLowerCase() == letters[j].toUpperCase()) {
+					notWords++;
+				}
 			}
 		}
 		if (emptyField(address)) {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is requited";
 			address.parentNode.appendChild(pAddress);
-			addressFalse();
+			toFalse(addressCorrect);
 			addressErrorSet(pAddress.innerHTML);
 		} else if (isNaN(number) == true) {
+			console.log("not a number");
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address don't have a number";
 			address.parentNode.appendChild(pAddress);
-			addressFalse();
+			toFalse(addressCorrect);
 			addressErrorSet(pAddress.innerHTML);
 		} else if ((wordsCount != splitvalue.length - 1) || (wordsCount == 0)) {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is not valid";
 			address.parentNode.appendChild(pAddress);
-			addressFalse();
+			toFalse(addressCorrect);
 			addressErrorSet(pAddress.innerHTML);
-        } else {
+		} else if (notWords > 0) {
+			address.classList.add("errorRed");
+			pAddress.innerHTML = "Address is not valid, only letters in the name of the street";
+			address.parentNode.appendChild(pAddress);
+			toFalse(addressCorrect);
+			addressErrorSet(pAddress.innerHTML);
+		}else {
             address.classList.add("okGreen");
             pAddress.innerHTML = "Address is valid";
             address.parentNode.appendChild(pAddress);
-            addressTrue();
+			toTrue(addressCorrect);
             addressErrorSet(pAddress.innerHTML);
         }
     };
@@ -512,25 +444,25 @@ window.onload = function () {
 			locality.classList.add("errorRed");
 			pLocality.innerHTML = "Locality is requited";
 			locality.parentNode.appendChild(pLocality);
-			localityFalse();
+			toFalse(localityCorrect);
 			localityErrorSet(pLocality.innerHTML);
-		} else if (!validateLocality(locality)) {
+		} else if (!onlyLetters(locality)) {
 			locality.classList.add("errorRed");
-			pLocality.innerHTML = "Locality is not valid";
+			pLocality.innerHTML = "Locality is not valid, only letters";
 			locality.parentNode.appendChild(pLocality);
-			localityFalse();
+			toFalse(localityCorrect);
 			localityErrorSet(pLocality.innerHTML);
 		} else if (!validateLocalityLength(locality)) {
 			locality.classList.add("errorRed");
 			pLocality.innerHTML = "Locality is too short";
 			locality.parentNode.appendChild(pLocality);
-			localityFalse();
+			toFalse(localityCorrect);
 			localityErrorSet(pLocality.innerHTML);
 		} else {
 			locality.classList.add("okGreen");
 			pLocality.innerHTML = "Locality is valid";
 			locality.parentNode.appendChild(pLocality);
-			localityTrue();
+			toTrue(localityCorrect);
 			localityErrorSet(pLocality.innerHTML);
 		}
 	};
@@ -541,7 +473,7 @@ window.onload = function () {
 			postalCode.classList.add("errorRed");
 			pPostalCode.innerHTML = "Postal code is requited";
 			postalCode.parentNode.appendChild(pPostalCode);
-			postalCodeFalse();
+			toFalse(postalCodeCorrect);
 			postalCodeErrorSet(pPostalCode.innerHTML);
 		} else if (!validatePostalCodeLength(postalCode)) {
 			postalCode.classList.add("errorRed");
@@ -551,19 +483,19 @@ window.onload = function () {
 				pPostalCode.innerHTML = "Postal code is too long";
 			}
 			postalCode.parentNode.appendChild(pPostalCode);
-			postalCodeFalse();
+			toFalse(postalCodeCorrect);
 			postalCodeErrorSet(pPostalCode.innerHTML);
-		} else if (!validatePostalCode(postalCode)) {
+		} else if (!onlyNumbers(postalCode)) {
 			postalCode.classList.add("errorRed");
-			pPostalCode.innerHTML = "Postal code is not valid";
+			pPostalCode.innerHTML = "Postal code is not valid, only numbers";
 			postalCode.parentNode.appendChild(pPostalCode);
-			postalCodeFalse();
+			toFalse(postalCodeCorrect);
 			postalCodeErrorSet(pPostalCode.innerHTML);
 		} else {
 			postalCode.classList.add("okGreen");
 			pPostalCode.innerHTML = "Postal code is valid";
 			postalCode.parentNode.appendChild(pPostalCode);
-			postalCodeTrue();
+			toTrue(postalCodeCorrect);
 			postalCodeErrorSet(pPostalCode.innerHTML);
 		}
 	};
@@ -574,43 +506,75 @@ window.onload = function () {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is requited";
 			email.parentNode.appendChild(pEmail);
-			emailFalse();
+			toFalse(emailCorrect);
 			emailErrorSet(pEmail.innerHTML);
 		} else if (!validateEmail(email)) {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is not valid";
 			email.parentNode.appendChild(pEmail);
-			emailFalse();
+			toFalse(emailCorrect);
 			emailErrorSet(pEmail.innerHTML);
 		} else {
 			email.classList.add("okGreen");
 			pEmail.innerHTML = "Email is valid";
 			email.parentNode.appendChild(pEmail);
-			emailTrue();
+			toTrue(emailCorrect);
 			emailErrorSet(pEmail.innerHTML);
 		}
 	};
 
-	// on blur event for password
 	password.onblur = function () {
-		if (emptyField(password)) {
+		var passwordSlipt = password.value.split("");
+		var space = 0, number = 0, letter = 0, special = 0;
+		for (var i = 0; i < passwordSlipt.length; i++) {
+			if (passwordSlipt[i] == " ") {
+				space++;
+			} else if (
+				passwordSlipt[i].toUpperCase() !== passwordSlipt[i].toLowerCase()
+			) {
+				letter++;
+			} else if (passwordSlipt[i] == parseInt(passwordSlipt[i])) {
+				number++;
+			} else {
+				special++;
+			}
+		}
+		if (letter + number < passwordSlipt.length) {
 			password.classList.add("errorRed");
-			pPassword.innerHTML = "Password is requited";
+			pPassword.innerHTML = "Password invalid, contains special characters";
 			password.parentNode.appendChild(pPassword);
-			passwordFalse();
-			passwordErrorSet(pPassword.innerHTML);
+			toFalse(passwordCorrect);
+			errorInPassword(pPassword.innerHTML);
+		} else if (letter == 0) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password invalid, contains no letters";
+			password.parentNode.appendChild(pPassword);
+			toFalse(passwordCorrect);
+			errorInPassword(pPassword.innerHTML);
+		} else if (number == 0) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password invalid, contains no numbers";
+			password.parentNode.appendChild(pPassword);
+			toFalse(passwordCorrect);
+			errorInPassword(pPassword.innerHTML);
+		} else if (emptyField(password)) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password is required";
+			password.parentNode.appendChild(pPassword);
+			toFalse(passwordCorrect);
+			errorInPassword(pPassword.innerHTML);
 		} else if (!validatePassword(password)) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password is not valid";
 			password.parentNode.appendChild(pPassword);
-			passwordFalse();
-			passwordErrorSet(pPassword.innerHTML);
+			toFalse(passwordCorrect);
+			errorInPassword(pPassword.innerHTML);
 		} else {
 			password.classList.add("okGreen");
-			pPassword.innerHTML = "Password is valid";
+			pPassword.innerHTML = `Password is valid`;
 			password.parentNode.appendChild(pPassword);
-			passwordTrue();
-			passwordErrorSet(pPassword.innerHTML);
+			toTrue(passwordCorrect);
+			errorInPassword(pPassword.innerHTML);
 		}
 	};
 
@@ -620,20 +584,20 @@ window.onload = function () {
 			confirmPassword.classList.add("errorRed");
 			pConfirmPassword.innerHTML = "Confirm password is requited";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
-			confirmPasswordFalse();
+			toFalse(confirmPasswordCorrect);
 			confirmPasswordErrorSet(pConfirmPassword.innerHTML);
 		} else if (!validateConfirmPassword(password, confirmPassword)) {
 			confirmPassword.classList.add("errorRed");
 			pConfirmPassword.innerHTML =
 				"Confirm password is not the same as password";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
-			confirmPasswordFalse();
+			toFalse(confirmPasswordCorrect);
 			confirmPasswordErrorSet(pConfirmPassword.innerHTML);
 		} else {
 			confirmPassword.classList.add("okGreen");
 			pConfirmPassword.innerHTML = "Confirm password is valid";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
-			confirmPasswordTrue();
+			toTrue(confirmPasswordCorrect);
 			confirmPasswordErrorSet(pConfirmPassword.innerHTML);
 		}
 	};
@@ -658,6 +622,11 @@ window.onload = function () {
 	// on focus phone number
 	phoneNumber.onfocus = function () {
 		phoneNumber.classList.remove("errorRed", "okGreen");
+	};
+	
+	// on focus address
+	address.onfocus = function () {
+		address.classList.remove("errorRed", "okGreen");
 	};
 
 	// on focus locality
@@ -700,9 +669,17 @@ window.onload = function () {
 			passwordCorrect &&
 			confirmPasswordCorrect
 			) {
-				alert("Welcome to our website" + "\nName: " + name.value + "\nLast name: " + lastName.value + "\nID: " + ID.value + "\nDate of birth: " + dateOfBirth.value + "\nPhone number: " + phoneNumber.value + "\nAddress: " + address.value + "\nLocality: " + locality.value + "\nPostal code: " + postalCode.value + "\nEmail: " + email.value + "\nPassword: " + password.value + "\nConfirm password: " + confirmPassword.value);
+				alert("Welcome to our website" + "\nName: " + name.value + "\nLast name: " + lastName.value + 
+				"\nID: " + ID.value + "\nDate of birth: " + dateOfBirth.value + "\nPhone number: " + 
+				phoneNumber.value + "\nAddress: " + address.value + "\nLocality: " + locality.value + 
+				"\nPostal code: " + postalCode.value + "\nEmail: " + email.value + "\nPassword: " + 
+				password.value + "\nConfirm password: " + confirmPassword.value);
 			} else {
-				alert("Please, check your data" + "\nName: " + nameError + "\nLast name: " + lastNameError + "\nID: " + IDError + "\nDate of birth: " + dateOfBirthError + "\nPhone number: " + phoneNumberError + "\nAddress: " + addressError + "\nLocality: " + localityError + "\nPostal code: " + postalCodeError + "\nEmail: " + emailError + "\nPassword: " + passwordError + "\nConfirm password: " + confirmPasswordError);
+				alert("Please, check your data" + "\nName: " + nameError + "\nLast name: " + lastNameError + 
+				"\nID: " + IDError + "\nDate of birth: " + dateOfBirthError + "\nPhone number: " + 
+				phoneNumberError + "\nAddress: " + addressError + "\nLocality: " + localityError + 
+				"\nPostal code: " + postalCodeError + "\nEmail: " + emailError + "\nPassword: " + 
+				passwordError + "\nConfirm password: " + confirmPasswordError);
 			}
 	};
 };
