@@ -343,9 +343,9 @@ window.onload = function () {
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
 			toFalse(dateOfBirthCorrect);
 			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
-		} else if (year < 1922) {
+		} else if (2020 - year < 18) {
 			dateOfBirth.classList.add("errorRed");
-			pDateOfBirth.innerHTML = "Date of birth is not valid (too old)";
+			pDateOfBirth.innerHTML = "Date of birth is not valid (too young)";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
 			toFalse(dateOfBirthCorrect);
 			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
