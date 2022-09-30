@@ -15,6 +15,7 @@
       - [Week 4 of development](#week-4-of-development)
       - [Week 5 of development](#week-5-of-development)
       - [Week 6 of development](#week-6-of-development)
+      - [Week 7 of development](#week-7-of-development)
     - [*Learning content*](#learning-content)
       - [Week 1 of classes](#week-1-of-classes)
       - [Week 2 of classes](#week-2-of-classes)
@@ -22,13 +23,15 @@
       - [Week 4 of classes](#week-4-of-classes)
       - [Week 5 of classes](#week-5-of-classes)
       - [Week 6 of classes](#week-6-of-classes)
+      - [Week 7 of classes](#week-7-of-classes)
   - [Results of the project](#results-of-the-project)
-      - [Week 1 of development](#week-1-of-development-1)
-      - [Week 2 of development](#week-2-of-development-1)
-      - [Week 3 of development](#week-3-of-development-1)
-      - [Week 4 of development](#week-4-of-development-1)
-      - [Week 5 of development](#week-5-of-development-1)
-      - [Week 6 of development](#week-6-of-development-1)
+      - [Week 1 Results](#week-1-results)
+      - [Week 2 Results](#week-2-results)
+      - [Week 3 Results](#week-3-results)
+      - [Week 4 Results](#week-4-results)
+      - [Week 5 Results](#week-5-results)
+      - [Week 6 Results](#week-6-results)
+      - [Week 7 Results](#week-7-results)
   - [Technologies used :exploding_head:](#technologies-used-exploding_head)
   - [Development tools :nerd_face:](#development-tools-nerd_face)
     - [Personal profile :see_no_evil:](#personal-profile-see_no_evil)
@@ -78,6 +81,10 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 
 - We add javascript to the landing page, sign-up and sign-in
 
+#### Week 7 of development
+
+- We add callbacks, promises and async/await to the sign-up and sign-in pages
+
 ### *Learning content*
 
 #### Week 1 of classes
@@ -108,32 +115,40 @@ RadiumRocket developed TrackGenix as a software solution for optimal time-tracki
 
 - We learned how to use DOM in JavaScript
 
+#### Week 7 of classes
+
+- We learned how to use callbacks, promises and async/await
+
 ## Results of the project
 
-#### Week 1 of development
+#### Week 1 Results
 
 - <https://www.figma.com/file/TzLLCtCJVv63kbGI1VR4hT/UI-kit-RR-(BaSP)-Bestia-B?node-id=601%3A367>
 
-#### Week 2 of development
+#### Week 2 Results
 
 - <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-02/index.html>
 
-#### Week 3 of development
+#### Week 3 Results
 
 - <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html>
 
-#### Week 4 of development
+#### Week 4 Results
 
 - <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html>
 
-#### Week 5 of development
+#### Week 5 Results
 
 - <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html>
 
-#### Week 6 of development
+#### Week 6 Results
 
 - <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html>
 
+#### Week 7 Results
+
+- <https://kolodani.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html>
+  
 ## Technologies used :exploding_head:
 
 - HTML
