@@ -13,26 +13,6 @@ window.onload = function () {
 	email.setAttribute("placeholder", "Email");
 	password.setAttribute("placeholder", "Password");
 	
-	function emailTrue() {
-		emailCorrect = true;
-	}
-	function emailFalse() {
-		emailCorrect = false;
-	}
-	function passwordTrue() {
-		passwordCorrect = true;
-	}
-	function passwordFalse() {
-		passwordCorrect = false;
-	}
-	
-	function errorInEmail(a) {
-		emailError = a;
-	}
-	function errorInPassword(a) {
-		passwordError = a;
-	}
-
 	function validateEmail(email) {
 		if (emailExpression.test(email.value)) {
 			return true;
@@ -81,20 +61,20 @@ window.onload = function () {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is required";
 			email.parentNode.appendChild(pEmail);
-			emailFalse();
-			errorInEmail(pEmail.innerHTML);
+			emailCorrect = false;
+			emailError = pEmail.innerHTML;
 		} else if (!validateEmail(email)) {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is not valid";
 			email.parentNode.appendChild(pEmail);
-			emailFalse();
-			errorInEmail(pEmail.innerHTML);
+			emailCorrect = false;
+			emailError = pEmail.innerHTML;
 		} else {
 			email.classList.add("okGreen");
 			pEmail.innerHTML = "Email is valid";
 			email.parentNode.appendChild(pEmail);
-			emailTrue();
-			errorInEmail(pEmail.innerHTML);
+			emailCorrect = true;
+			emailError = pEmail.innerHTML;
 		}
 	};
 
@@ -116,38 +96,38 @@ window.onload = function () {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains special characters";
 			password.parentNode.appendChild(pPassword);
-			passwordFalse();
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (letter == 0) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains no letters";
 			password.parentNode.appendChild(pPassword);
-			passwordFalse();
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (number == 0) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains no numbers";
 			password.parentNode.appendChild(pPassword);
-			passwordFalse();
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (emptyField(password)) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password is required";
 			password.parentNode.appendChild(pPassword);
-			passwordFalse();
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (!validatePassword(password)) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password is not valid";
 			password.parentNode.appendChild(pPassword);
-			passwordFalse();
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else {
 			password.classList.add("okGreen");
 			pPassword.innerHTML = `Password is valid`;
 			password.parentNode.appendChild(pPassword);
-			passwordTrue();
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = true;
+			passwordError = pPassword.innerHTML;
 		}
 	};
 

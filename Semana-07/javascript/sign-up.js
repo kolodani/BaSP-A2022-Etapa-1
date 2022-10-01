@@ -68,49 +68,6 @@ window.onload = function () {
 	password.setAttribute("placeholder", "Password");
 	confirmPassword.setAttribute("placeholder", "Confirm Password");
 
-	// functions to set boolean variables
-	function toTrue(a) {
-		a = true;
-	}
-	function toFalse(a) {
-		a = false;
-	}
-
-	// functions to set error messages
-	function nameErrorSet(a) {
-		nameError = a;
-	}
-	function lastNameErrorSet(a) {
-		lastNameError = a;
-	}
-	function IDErrorSet(a) {
-		IDError = a;
-	}
-	function dateOfBirthErrorSet(a) {
-		dateOfBirthError = a;
-	}
-	function phoneNumberErrorSet(a) {
-		phoneNumberError = a;
-	}
-	function addressErrorSet(a) {
-		addressError = a;
-	}
-	function localityErrorSet(a) {
-		localityError = a;
-	}
-	function postalCodeErrorSet(a) {
-		postalCodeError = a;
-	}
-	function emailErrorSet(a) {
-		emailError = a;
-	}
-	function passwordErrorSet(a) {
-		passwordError = a;
-	}
-	function confirmPasswordErrorSet(a) {
-		confirmPasswordError = a;
-	}
-
 	// validate is only letters
 	function onlyLetters(a) {
 		var aSplit = a.value.split("");
@@ -190,15 +147,6 @@ window.onload = function () {
 		}
 	}
 
-	// validate postal code, only numbers
-	function validatePostalCode(postalCode) {
-		if (postalCodeExpression.test(postalCode.value)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	// validate postal code length = 4 or 5
 	function validatePostalCodeLength(postalCode) {
 		if (postalCode.value.length == 4 || postalCode.value.length == 5) {
@@ -243,7 +191,17 @@ window.onload = function () {
 			return false;
 		}
 	}
-
+	
+	function serverRequest() {
+		var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name=" + name.value + "&lastName=" + lastName.value + "&dni=" + ID.value + "&dob=" + dateOfBirth.value + "&phone=" + phoneNumber.value + "&address=" + address.value + "&city=" + locality.value + "&zip=" + postalCode.value + "&email=" + email.value + "&password=" + password.value;
+		fetch(url)
+			.then(function(response) {
+				return response.json();
+			})
+			.then(function(data) {
+				console.log(data);
+			})
+	}
 	// blur event
 
 	// on blur name
@@ -252,26 +210,26 @@ window.onload = function () {
 			name.classList.add("errorRed");
 			pName.innerHTML = "Name is requited";
 			name.parentNode.appendChild(pName);
-			toFalse(nameCorrect);
-			nameErrorSet(pName.innerHTML);
+			nameCorrect = false;
+			nameError = pName.innerHTML;
 		} else if (!onlyLetters(name)) {
 			name.classList.add("errorRed");
 			pName.innerHTML = "Name is not valid, only letters";
 			name.parentNode.appendChild(pName);
-			toFalse(nameCorrect);
-			nameErrorSet(pName.innerHTML);
+			nameCorrect = false;
+			nameError = pName.innerHTML;
 		} else if (!validateNameLength(name)) {
 			name.classList.add("errorRed");
 			pName.innerHTML = "Name is too short";
 			name.parentNode.appendChild(pName);
-			toFalse(nameCorrect);
-			nameErrorSet(pName.innerHTML);
+			nameCorrect = false;
+			nameError = pName.innerHTML;
 		} else {
 			name.classList.add("okGreen");
 			pName.innerHTML = "Name is valid";
 			name.parentNode.appendChild(pName);
-			toTrue(nameCorrect);
-			nameErrorSet(pName.innerHTML);
+			nameCorrect = true;
+			nameError = pName.innerHTML;
 		}
 	};
 
@@ -281,26 +239,26 @@ window.onload = function () {
 			lastName.classList.add("errorRed");
 			pLastName.innerHTML = "Last name is requited";
 			lastName.parentNode.appendChild(pLastName);
-			toFalse(lastNameCorrect);
-			lastNameErrorSet(pLastName.innerHTML);
+			lastNameCorrect = false;
+			lastNameError = pLastName.innerHTML;
 		} else if (!onlyLetters(lastName)) {
 			lastName.classList.add("errorRed");
 			pLastName.innerHTML = "Name is not valid, only letters";
 			lastName.parentNode.appendChild(pLastName);
-			toFalse(lastNameCorrect);
-			lastNameErrorSet(pLastName.innerHTML);
+			lastNameCorrect = false;
+			lastNameError = pLastName.innerHTML;
 		} else if (!validateLastNameLength(lastName)) {
 			lastName.classList.add("errorRed");
 			pLastName.innerHTML = "Last name is too short";
 			lastName.parentNode.appendChild(pLastName);
-			toFalse(lastNameCorrect);
-			lastNameErrorSet(pLastName.innerHTML);
+			lastNameCorrect = false;
+			lastNameError = pLastName.innerHTML;
 		} else {
 			lastName.classList.add("okGreen");
 			pLastName.innerHTML = "Last name is valid";
 			lastName.parentNode.appendChild(pLastName);
-			toTrue(lastNameCorrect);
-			lastNameErrorSet(pLastName.innerHTML);
+			lastNameCorrect = true;
+			lastNameError = pLastName.innerHTML;
 		}
 	};
 
@@ -310,26 +268,26 @@ window.onload = function () {
 			ID.classList.add("errorRed");
 			pID.innerHTML = "ID is requited";
 			ID.parentNode.appendChild(pID);
-			toFalse(IDCorrect);
-			IDErrorSet(pID.innerHTML);
+			IDCorrect = false;
+			IDError = pID.innerHTML;
 		} else if (!onlyNumbers(ID)) {
 			ID.classList.add("errorRed");
 			pID.innerHTML = "ID is not valid, only numbers";
 			ID.parentNode.appendChild(pID);
-			toFalse(IDCorrect);
-			IDErrorSet(pID.innerHTML);
+			IDCorrect = false;
+			IDError = pID.innerHTML;
 		} else if (!validateDNILength(ID)) {
 			ID.classList.add("errorRed");
 			pID.innerHTML = "ID is too short";
 			ID.parentNode.appendChild(pID);
-			toFalse(IDCorrect);
-			IDErrorSet(pID.innerHTML);
+			IDCorrect = false;
+			IDError = pID.innerHTML;
 		} else {
 			ID.classList.add("okGreen");
 			pID.innerHTML = "ID is valid";
 			ID.parentNode.appendChild(pID);
-			toTrue(IDCorrect);
-			IDErrorSet(pID.innerHTML);
+			IDCorrect = true;
+			IDError = pID.innerHTML;
 		}
 	};
 
@@ -341,20 +299,20 @@ window.onload = function () {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is requited";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
-			toFalse(dateOfBirthCorrect);
-			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
+			dateOfBirthCorrect = false;
+			dateOfBirthError = pDateOfBirth.innerHTML;
 		} else if (2020 - year < 18) {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is not valid (too young)";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
-			toFalse(dateOfBirthCorrect);
-			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
+			dateOfBirthCorrect = false;
+			dateOfBirthError = pDateOfBirth.innerHTML;
 		} else {
 			dateOfBirth.classList.add("okGreen");
 			pDateOfBirth.innerHTML = "Date of birth is valid";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
-			toTrue(dateOfBirthCorrect);
-			dateOfBirthErrorSet(pDateOfBirth.innerHTML);
+			dateOfBirthCorrect = true;
+			dateOfBirthError = pDateOfBirth.innerHTML;
 		}
 	};
 
@@ -364,26 +322,26 @@ window.onload = function () {
 			phoneNumber.classList.add("errorRed");
 			pPhoneNumber.innerHTML = "Phone number is requited";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			toFalse(phoneNumberCorrect);
-			phoneNumberErrorSet(pPhoneNumber.innerHTML);
+			phoneNumberCorrect = false;
+			phoneNumberError = pPhoneNumber.innerHTML;
 		} else if (!onlyNumbers(phoneNumber)) {
 			phoneNumber.classList.add("errorRed");
 			pPhoneNumber.innerHTML = "Phone number is not valid, only numbers";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			toFalse(phoneNumberCorrect);
-			phoneNumberErrorSet(pPhoneNumber.innerHTML);
+			phoneNumberCorrect = false;
+			phoneNumberError = pPhoneNumber.innerHTML;
 		} else if (!validatePhoneNumberLength(phoneNumber)) {
 			phoneNumber.classList.add("errorRed");
 			pPhoneNumber.innerHTML = "Phone number is too short";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			toFalse(phoneNumberCorrect);
-			phoneNumberErrorSet(pPhoneNumber.innerHTML);
+			phoneNumberCorrect = false;
+			phoneNumberError = pPhoneNumber.innerHTML;
 		} else {
 			phoneNumber.classList.add("okGreen");
 			pPhoneNumber.innerHTML = "Phone number is valid";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
-			toTrue(phoneNumberCorrect);
-			phoneNumberErrorSet(pPhoneNumber.innerHTML);
+			phoneNumberCorrect = true;
+			phoneNumberError = pPhoneNumber.innerHTML;
 		}
 	};
 
@@ -408,33 +366,32 @@ window.onload = function () {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is requited";
 			address.parentNode.appendChild(pAddress);
-			toFalse(addressCorrect);
-			addressErrorSet(pAddress.innerHTML);
+			addressCorrect = false;
+			addressError = pAddress.innerHTML;
 		} else if (isNaN(number) == true) {
-			console.log("not a number");
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address don't have a number";
 			address.parentNode.appendChild(pAddress);
-			toFalse(addressCorrect);
-			addressErrorSet(pAddress.innerHTML);
+			addressCorrect = false;
+			addressError = pAddress.innerHTML;
 		} else if ((wordsCount != splitvalue.length - 1) || (wordsCount == 0)) {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is not valid";
 			address.parentNode.appendChild(pAddress);
-			toFalse(addressCorrect);
-			addressErrorSet(pAddress.innerHTML);
+			addressCorrect = false;
+			addressError = pAddress.innerHTML;
 		} else if (notWords > 0) {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is not valid, only letters in the name of the street";
 			address.parentNode.appendChild(pAddress);
-			toFalse(addressCorrect);
-			addressErrorSet(pAddress.innerHTML);
+			addressCorrect = false;
+			addressError = pAddress.innerHTML;
 		}else {
             address.classList.add("okGreen");
             pAddress.innerHTML = "Address is valid";
             address.parentNode.appendChild(pAddress);
-			toTrue(addressCorrect);
-            addressErrorSet(pAddress.innerHTML);
+			addressCorrect = true;
+			addressError = pAddress.innerHTML;
         }
     };
 
@@ -444,26 +401,26 @@ window.onload = function () {
 			locality.classList.add("errorRed");
 			pLocality.innerHTML = "Locality is requited";
 			locality.parentNode.appendChild(pLocality);
-			toFalse(localityCorrect);
-			localityErrorSet(pLocality.innerHTML);
+			localityCorrect = false;
+			localityError = pLocality.innerHTML;
 		} else if (!onlyLetters(locality)) {
 			locality.classList.add("errorRed");
 			pLocality.innerHTML = "Locality is not valid, only letters";
 			locality.parentNode.appendChild(pLocality);
-			toFalse(localityCorrect);
-			localityErrorSet(pLocality.innerHTML);
+			localityCorrect = false;
+			localityError = pLocality.innerHTML;
 		} else if (!validateLocalityLength(locality)) {
 			locality.classList.add("errorRed");
 			pLocality.innerHTML = "Locality is too short";
 			locality.parentNode.appendChild(pLocality);
-			toFalse(localityCorrect);
-			localityErrorSet(pLocality.innerHTML);
+			localityCorrect = false;
+			localityError = pLocality.innerHTML;
 		} else {
 			locality.classList.add("okGreen");
 			pLocality.innerHTML = "Locality is valid";
 			locality.parentNode.appendChild(pLocality);
-			toTrue(localityCorrect);
-			localityErrorSet(pLocality.innerHTML);
+			localityCorrect = true;
+			localityError = pLocality.innerHTML;
 		}
 	};
 
@@ -473,8 +430,8 @@ window.onload = function () {
 			postalCode.classList.add("errorRed");
 			pPostalCode.innerHTML = "Postal code is requited";
 			postalCode.parentNode.appendChild(pPostalCode);
-			toFalse(postalCodeCorrect);
-			postalCodeErrorSet(pPostalCode.innerHTML);
+			postalCodeCorrect = false;
+			postalCodeError = pPostalCode.innerHTML;
 		} else if (!validatePostalCodeLength(postalCode)) {
 			postalCode.classList.add("errorRed");
 			if (postalCode.value.length < 4) {
@@ -483,20 +440,20 @@ window.onload = function () {
 				pPostalCode.innerHTML = "Postal code is too long";
 			}
 			postalCode.parentNode.appendChild(pPostalCode);
-			toFalse(postalCodeCorrect);
-			postalCodeErrorSet(pPostalCode.innerHTML);
+			postalCodeCorrect = false;
+			postalCodeError = pPostalCode.innerHTML;
 		} else if (!onlyNumbers(postalCode)) {
 			postalCode.classList.add("errorRed");
 			pPostalCode.innerHTML = "Postal code is not valid, only numbers";
 			postalCode.parentNode.appendChild(pPostalCode);
-			toFalse(postalCodeCorrect);
-			postalCodeErrorSet(pPostalCode.innerHTML);
+			postalCodeCorrect = false;
+			postalCodeError = pPostalCode.innerHTML;
 		} else {
 			postalCode.classList.add("okGreen");
 			pPostalCode.innerHTML = "Postal code is valid";
 			postalCode.parentNode.appendChild(pPostalCode);
-			toTrue(postalCodeCorrect);
-			postalCodeErrorSet(pPostalCode.innerHTML);
+			postalCodeCorrect = true;
+			postalCodeError = pPostalCode.innerHTML;
 		}
 	};
 
@@ -506,20 +463,20 @@ window.onload = function () {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is requited";
 			email.parentNode.appendChild(pEmail);
-			toFalse(emailCorrect);
-			emailErrorSet(pEmail.innerHTML);
+			emailCorrect = false;
+			emailError = pEmail.innerHTML;
 		} else if (!validateEmail(email)) {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is not valid";
 			email.parentNode.appendChild(pEmail);
-			toFalse(emailCorrect);
-			emailErrorSet(pEmail.innerHTML);
+			emailCorrect = false;
+			emailError = pEmail.innerHTML;
 		} else {
 			email.classList.add("okGreen");
 			pEmail.innerHTML = "Email is valid";
 			email.parentNode.appendChild(pEmail);
-			toTrue(emailCorrect);
-			emailErrorSet(pEmail.innerHTML);
+			emailCorrect = true;
+			emailError = pEmail.innerHTML;
 		}
 	};
 
@@ -543,38 +500,38 @@ window.onload = function () {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains special characters";
 			password.parentNode.appendChild(pPassword);
-			toFalse(passwordCorrect);
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (letter == 0) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains no letters";
 			password.parentNode.appendChild(pPassword);
-			toFalse(passwordCorrect);
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (number == 0) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains no numbers";
 			password.parentNode.appendChild(pPassword);
-			toFalse(passwordCorrect);
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (emptyField(password)) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password is required";
 			password.parentNode.appendChild(pPassword);
-			toFalse(passwordCorrect);
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else if (!validatePassword(password)) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password is not valid";
 			password.parentNode.appendChild(pPassword);
-			toFalse(passwordCorrect);
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
 		} else {
 			password.classList.add("okGreen");
 			pPassword.innerHTML = `Password is valid`;
 			password.parentNode.appendChild(pPassword);
-			toTrue(passwordCorrect);
-			errorInPassword(pPassword.innerHTML);
+			passwordCorrect = true;
+			passwordError = pPassword.innerHTML;
 		}
 	};
 
@@ -584,21 +541,20 @@ window.onload = function () {
 			confirmPassword.classList.add("errorRed");
 			pConfirmPassword.innerHTML = "Confirm password is requited";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
-			toFalse(confirmPasswordCorrect);
-			confirmPasswordErrorSet(pConfirmPassword.innerHTML);
+			confirmPasswordCorrect = false;
+			confirmPasswordError = pConfirmPassword.innerHTML;
 		} else if (!validateConfirmPassword(password, confirmPassword)) {
 			confirmPassword.classList.add("errorRed");
-			pConfirmPassword.innerHTML =
-				"Confirm password is not the same as password";
+			pConfirmPassword.innerHTML = "Confirm password is not the same as password";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
-			toFalse(confirmPasswordCorrect);
-			confirmPasswordErrorSet(pConfirmPassword.innerHTML);
+			confirmPasswordCorrect = false;
+			confirmPasswordError = pConfirmPassword.innerHTML;
 		} else {
 			confirmPassword.classList.add("okGreen");
 			pConfirmPassword.innerHTML = "Confirm password is valid";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
-			toTrue(confirmPasswordCorrect);
-			confirmPasswordErrorSet(pConfirmPassword.innerHTML);
+			confirmPasswordCorrect = true;
+			confirmPasswordError = pConfirmPassword.innerHTML;
 		}
 	};
 
@@ -669,11 +625,14 @@ window.onload = function () {
 			passwordCorrect &&
 			confirmPasswordCorrect
 			) {
+				serverRequest();
+				/*
 				alert("Welcome to our website" + "\nName: " + name.value + "\nLast name: " + lastName.value + 
 				"\nID: " + ID.value + "\nDate of birth: " + dateOfBirth.value + "\nPhone number: " + 
 				phoneNumber.value + "\nAddress: " + address.value + "\nLocality: " + locality.value + 
 				"\nPostal code: " + postalCode.value + "\nEmail: " + email.value + "\nPassword: " + 
 				password.value + "\nConfirm password: " + confirmPassword.value);
+				*/
 			} else {
 				alert("Please, check your data" + "\nName: " + nameError + "\nLast name: " + lastNameError + 
 				"\nID: " + IDError + "\nDate of birth: " + dateOfBirthError + "\nPhone number: " + 
