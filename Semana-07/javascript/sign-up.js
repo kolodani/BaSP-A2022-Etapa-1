@@ -4,6 +4,7 @@ window.onload = function () {
 	var lastName = document.getElementById("lastName");
 	var ID = document.getElementById("ID");
 	var dateOfBirth = document.getElementById("dateOfBirth");
+	var dateOfBirthServer;
 	var phoneNumber = document.getElementById("phoneNumber");
 	var address = document.getElementById("address");
 	var locality = document.getElementById("locality");
@@ -55,7 +56,6 @@ window.onload = function () {
 	var passwordError = "Password is required";
 	var confirmPasswordError = "Confirm password is required";
 
-	// set attributes
 	name.setAttribute("placeholder", "Name");
 	lastName.setAttribute("placeholder", "Last Name");
 	ID.setAttribute("placeholder", "ID");
@@ -79,12 +79,11 @@ window.onload = function () {
 		}
 		if (letters == aSplit.length) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
-	
+
 	// validate is only numbers
 	function onlyNumbers(a) {
 		var aSplit = a.value.split("");
@@ -96,8 +95,7 @@ window.onload = function () {
 		}
 		if (numbers == aSplit.length) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
@@ -191,18 +189,124 @@ window.onload = function () {
 			return false;
 		}
 	}
-	
+
 	function serverRequest() {
-		var url = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name=" + name.value + "&lastName=" + lastName.value + "&dni=" + ID.value + "&dob=" + dateOfBirth.value + "&phone=" + phoneNumber.value + "&address=" + address.value + "&city=" + locality.value + "&zip=" + postalCode.value + "&email=" + email.value + "&password=" + password.value;
+		var url =
+			"https://basp-m2022-api-rest-server.herokuapp.com/signup?name=" +
+			name.value +
+			"&lastName=" +
+			lastName.value +
+			"&dni=" +
+			ID.value +
+			"&dob=" +
+			dateOfBirthServer +
+			"&phone=" +
+			phoneNumber.value +
+			"&address=" +
+			address.value +
+			"&city=" +
+			locality.value +
+			"&zip=" +
+			postalCode.value +
+			"&email=" +
+			email.value +
+			"&password=" +
+			password.value;
 		fetch(url)
-			.then(function(response) {
+			.then(function (response) {
 				return response.json();
 			})
-			.then(function(data) {
+			.then(function (data) {
 				console.log(data);
+				if (data.success) {
+					saveInLocalStorage(data);
+					alert(
+						"Success Request: " +
+							data.msg +
+							"\nName: " +
+							data.data.name +
+							"\nLast Name: " +
+							data.data.lastName +
+							"\nID: " +
+							data.data.dni +
+							"\nDate of Birth: " +
+							data.data.dob +
+							"\nPhone Number: " +
+							data.data.phone +
+							"\nAddress: " +
+							data.data.address +
+							"\nLocality: " +
+							data.data.city +
+							"\nPostal Code: " +
+							data.data.zip +
+							"\nEmail: " +
+							data.data.email +
+							"\nPassword: " +
+							data.data.password
+					);
+				} else {
+					alert(
+						"Error Request: " +
+							data.msg +
+							"\nCheck your information with the error message:" +
+							"\nName: " +
+							data.data.name +
+							"\nLast Name: " +
+							data.data.lastName +
+							"\nID: " +
+							data.data.dni +
+							"\nDate of Birth: " +
+							data.data.dob +
+							"\nPhone Number: " +
+							data.data.phone +
+							"\nAddress: " +
+							data.data.address +
+							"\nLocality: " +
+							data.data.city +
+							"\nPostal Code: " +
+							data.data.zip +
+							"\nEmail: " +
+							data.data.email +
+							"\nPassword: " +
+							data.data.password
+					);
+				}
 			})
+			.catch(function (error) {
+				console.log(error);
+			});
 	}
-	// blur event
+
+	// save in local storage
+	function saveInLocalStorage(data) {
+		localStorage.setItem("nameStorage", data.data.name);
+		localStorage.setItem("lastNameStorage", data.data.lastName);
+		localStorage.setItem("IDStorage", data.data.dni);
+		localStorage.setItem("dateOfBirthStorage", data.data.dob);
+		localStorage.setItem("phoneNumberStorage", data.data.phone);
+		localStorage.setItem("addressStorage", data.data.address);
+		localStorage.setItem("localityStorage", data.data.city);
+		localStorage.setItem("postalCodeStorage", data.data.zip);
+		localStorage.setItem("emailStorage", data.data.email);
+		localStorage.setItem("passwordStorage", data.data.password);
+	}
+
+	// set values of local storage in the form
+	function setValues() {
+		var correctDOB = localStorage.getItem("dateOfBirthStorage");
+		var correctDOBSplit = correctDOB.split("/");
+		name.value = localStorage.getItem("nameStorage");
+		lastName.value = localStorage.getItem("lastNameStorage");
+		ID.value = localStorage.getItem("IDStorage");
+		dateOfBirth.value = correctDOBSplit[2] + "-" + correctDOBSplit[0] + "-" + correctDOBSplit[1];
+		phoneNumber.value = localStorage.getItem("phoneNumberStorage");
+		address.value = localStorage.getItem("addressStorage");
+		locality.value = localStorage.getItem("localityStorage");
+		postalCode.value = localStorage.getItem("postalCodeStorage");
+		email.value = localStorage.getItem("emailStorage");
+		password.value = localStorage.getItem("passwordStorage");
+		confirmPassword.value = localStorage.getItem("passwordStorage");
+	}
 
 	// on blur name
 	name.onblur = function () {
@@ -313,6 +417,8 @@ window.onload = function () {
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
 			dateOfBirthCorrect = true;
 			dateOfBirthError = pDateOfBirth.innerHTML;
+			dateOfBirthServer =
+				splitvalue[1] + "/" + splitvalue[2] + "/" + splitvalue[0];
 		}
 	};
 
@@ -374,7 +480,7 @@ window.onload = function () {
 			address.parentNode.appendChild(pAddress);
 			addressCorrect = false;
 			addressError = pAddress.innerHTML;
-		} else if ((wordsCount != splitvalue.length - 1) || (wordsCount == 0)) {
+		} else if (wordsCount != splitvalue.length - 1 || wordsCount == 0) {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is not valid";
 			address.parentNode.appendChild(pAddress);
@@ -382,18 +488,19 @@ window.onload = function () {
 			addressError = pAddress.innerHTML;
 		} else if (notWords > 0) {
 			address.classList.add("errorRed");
-			pAddress.innerHTML = "Address is not valid, only letters in the name of the street";
+			pAddress.innerHTML =
+				"Address is not valid, only letters in the name of the street";
 			address.parentNode.appendChild(pAddress);
 			addressCorrect = false;
 			addressError = pAddress.innerHTML;
-		}else {
-            address.classList.add("okGreen");
-            pAddress.innerHTML = "Address is valid";
-            address.parentNode.appendChild(pAddress);
+		} else {
+			address.classList.add("okGreen");
+			pAddress.innerHTML = "Address is valid";
+			address.parentNode.appendChild(pAddress);
 			addressCorrect = true;
 			addressError = pAddress.innerHTML;
-        }
-    };
+		}
+	};
 
 	// on blur locality
 	locality.onblur = function () {
@@ -482,7 +589,10 @@ window.onload = function () {
 
 	password.onblur = function () {
 		var passwordSlipt = password.value.split("");
-		var space = 0, number = 0, letter = 0, special = 0;
+		var space = 0,
+			number = 0,
+			letter = 0,
+			special = 0;
 		for (var i = 0; i < passwordSlipt.length; i++) {
 			if (passwordSlipt[i] == " ") {
 				space++;
@@ -545,7 +655,8 @@ window.onload = function () {
 			confirmPasswordError = pConfirmPassword.innerHTML;
 		} else if (!validateConfirmPassword(password, confirmPassword)) {
 			confirmPassword.classList.add("errorRed");
-			pConfirmPassword.innerHTML = "Confirm password is not the same as password";
+			pConfirmPassword.innerHTML =
+				"Confirm password is not the same as password";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
 			confirmPasswordCorrect = false;
 			confirmPasswordError = pConfirmPassword.innerHTML;
@@ -558,7 +669,8 @@ window.onload = function () {
 		}
 	};
 
-	// on focus event
+	// set values when open the page
+	setValues();
 
 	// on focus name
 	name.onfocus = function () {
@@ -579,7 +691,7 @@ window.onload = function () {
 	phoneNumber.onfocus = function () {
 		phoneNumber.classList.remove("errorRed", "okGreen");
 	};
-	
+
 	// on focus address
 	address.onfocus = function () {
 		address.classList.remove("errorRed", "okGreen");
@@ -609,7 +721,7 @@ window.onload = function () {
 	confirmPassword.onfocus = function () {
 		confirmPassword.classList.remove("errorRed", "okGreen");
 	};
-	
+
 	// on submit event
 	continueButton.onclick = function () {
 		if (
@@ -624,21 +736,34 @@ window.onload = function () {
 			emailCorrect &&
 			passwordCorrect &&
 			confirmPasswordCorrect
-			) {
-				serverRequest();
-				/*
-				alert("Welcome to our website" + "\nName: " + name.value + "\nLast name: " + lastName.value + 
-				"\nID: " + ID.value + "\nDate of birth: " + dateOfBirth.value + "\nPhone number: " + 
-				phoneNumber.value + "\nAddress: " + address.value + "\nLocality: " + locality.value + 
-				"\nPostal code: " + postalCode.value + "\nEmail: " + email.value + "\nPassword: " + 
-				password.value + "\nConfirm password: " + confirmPassword.value);
-				*/
-			} else {
-				alert("Please, check your data" + "\nName: " + nameError + "\nLast name: " + lastNameError + 
-				"\nID: " + IDError + "\nDate of birth: " + dateOfBirthError + "\nPhone number: " + 
-				phoneNumberError + "\nAddress: " + addressError + "\nLocality: " + localityError + 
-				"\nPostal code: " + postalCodeError + "\nEmail: " + emailError + "\nPassword: " + 
-				passwordError + "\nConfirm password: " + confirmPasswordError);
-			}
+		) {
+			serverRequest();
+		} else {
+			alert(
+				"Please, check your data" +
+					"\nName: " +
+					nameError +
+					"\nLast name: " +
+					lastNameError +
+					"\nID: " +
+					IDError +
+					"\nDate of birth: " +
+					dateOfBirthError +
+					"\nPhone number: " +
+					phoneNumberError +
+					"\nAddress: " +
+					addressError +
+					"\nLocality: " +
+					localityError +
+					"\nPostal code: " +
+					postalCodeError +
+					"\nEmail: " +
+					emailError +
+					"\nPassword: " +
+					passwordError +
+					"\nConfirm password: " +
+					confirmPasswordError
+			);
+		}
 	};
 };
