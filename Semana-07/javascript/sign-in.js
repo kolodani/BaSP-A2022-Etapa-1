@@ -12,31 +12,7 @@ window.onload = function () {
 	
 	email.setAttribute("placeholder", "Email");
 	password.setAttribute("placeholder", "Password");
-	
-	function validateEmail(email) {
-		if (emailExpression.test(email.value)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
 
-	function validatePassword(password) {
-		if (password.value.length > 7) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	function emptyField(field) {
-		if (field.value == "") {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
 	function serverRequest() {
 		var url = "https://basp-m2022-api-rest-server.herokuapp.com/login?email=" + email.value + 
 		"&password=" + password.value;
@@ -52,18 +28,18 @@ window.onload = function () {
 			}
 		})
 		.catch(function(error) {
-			console.log("Error: " + error);
+			alert("Error !!!\n" + error);
 		})
 	}
 
 	email.onblur = function () {
-		if (emptyField(email)) {
+		if (email.value == "") {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is required";
 			email.parentNode.appendChild(pEmail);
 			emailCorrect = false;
 			emailError = pEmail.innerHTML;
-		} else if (!validateEmail(email)) {
+		} else if (!emailExpression.test(email.value)) {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is not valid";
 			email.parentNode.appendChild(pEmail);
@@ -92,9 +68,21 @@ window.onload = function () {
 				special++;
 			}
 		}
-		if ((letter + number) < passwordSlipt.length) {
+		if (password.value == "") {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password is required";
+			password.parentNode.appendChild(pPassword);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
+		} else if (special > 0) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains special characters";
+			password.parentNode.appendChild(pPassword);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
+		} else if (space > 0) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password invalid, contains spaces";
 			password.parentNode.appendChild(pPassword);
 			passwordCorrect = false;
 			passwordError = pPassword.innerHTML;
@@ -110,15 +98,9 @@ window.onload = function () {
 			password.parentNode.appendChild(pPassword);
 			passwordCorrect = false;
 			passwordError = pPassword.innerHTML;
-		} else if (emptyField(password)) {
+		} else if (password.value.length < 8) {
 			password.classList.add("errorRed");
-			pPassword.innerHTML = "Password is required";
-			password.parentNode.appendChild(pPassword);
-			passwordCorrect = false;
-			passwordError = pPassword.innerHTML;
-		} else if (!validatePassword(password)) {
-			password.classList.add("errorRed");
-			pPassword.innerHTML = "Password is not valid";
+			pPassword.innerHTML = "Password is too short";
 			password.parentNode.appendChild(pPassword);
 			passwordCorrect = false;
 			passwordError = pPassword.innerHTML;
@@ -143,7 +125,6 @@ window.onload = function () {
 	continueButton.onclick = function () {
 		if (emailCorrect && passwordCorrect) {
 			serverRequest();
-			// alert("Welcome to the system\n" + "Email: " + email.value + "\nPassword: " + password.value);
 		} else {
 			alert("Please, check your data\n" + "Email: " + emailError + "\nPassword: " + passwordError);
 		}

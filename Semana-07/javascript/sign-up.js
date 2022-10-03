@@ -100,96 +100,6 @@ window.onload = function () {
 		}
 	}
 
-	// validate name length > 3
-	function validateNameLength(name) {
-		if (name.value.length > 3) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate last name length > 3
-	function validateLastNameLength(lastName) {
-		if (lastName.value.length > 3) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate ID length > 7
-	function validateDNILength(ID) {
-		if (ID.value.length > 7) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate phone number length = 10
-	function validatePhoneNumberLength(phoneNumber) {
-		if (phoneNumber.value.length == 10) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate location length > 3
-	function validateLocalityLength(locality) {
-		if (locality.value.length > 3) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate postal code length = 4 or 5
-	function validatePostalCodeLength(postalCode) {
-		if (postalCode.value.length == 4 || postalCode.value.length == 5) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate email
-	function validateEmail(email) {
-		if (emailExpression.test(email.value)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate password
-	function validatePassword(password) {
-		if (password.value.length > 7) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// validate confirm password
-	function validateConfirmPassword(password, confirmPassword) {
-		if (password.value == confirmPassword.value) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	// empty field
-	function emptyField(field) {
-		if (field.value == "") {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 	function serverRequest() {
 		var url =
 			"https://basp-m2022-api-rest-server.herokuapp.com/signup?name=" +
@@ -273,7 +183,7 @@ window.onload = function () {
 				}
 			})
 			.catch(function (error) {
-				console.log(error);
+				alert("Error !!!\n" + error);
 			});
 	}
 
@@ -310,7 +220,7 @@ window.onload = function () {
 
 	// on blur name
 	name.onblur = function () {
-		if (emptyField(name)) {
+		if (name.value == "") {
 			name.classList.add("errorRed");
 			pName.innerHTML = "Name is requited";
 			name.parentNode.appendChild(pName);
@@ -322,7 +232,7 @@ window.onload = function () {
 			name.parentNode.appendChild(pName);
 			nameCorrect = false;
 			nameError = pName.innerHTML;
-		} else if (!validateNameLength(name)) {
+		} else if (name.value.length < 2) {
 			name.classList.add("errorRed");
 			pName.innerHTML = "Name is too short";
 			name.parentNode.appendChild(pName);
@@ -339,7 +249,7 @@ window.onload = function () {
 
 	// on blur last name
 	lastName.onblur = function () {
-		if (emptyField(lastName)) {
+		if (lastName.value == "") {
 			lastName.classList.add("errorRed");
 			pLastName.innerHTML = "Last name is requited";
 			lastName.parentNode.appendChild(pLastName);
@@ -351,7 +261,7 @@ window.onload = function () {
 			lastName.parentNode.appendChild(pLastName);
 			lastNameCorrect = false;
 			lastNameError = pLastName.innerHTML;
-		} else if (!validateLastNameLength(lastName)) {
+		} else if (lastName.value.length < 2) {
 			lastName.classList.add("errorRed");
 			pLastName.innerHTML = "Last name is too short";
 			lastName.parentNode.appendChild(pLastName);
@@ -368,7 +278,7 @@ window.onload = function () {
 
 	// on blur ID
 	ID.onblur = function () {
-		if (emptyField(ID)) {
+		if (ID.value == "") {
 			ID.classList.add("errorRed");
 			pID.innerHTML = "ID is requited";
 			ID.parentNode.appendChild(pID);
@@ -380,9 +290,15 @@ window.onload = function () {
 			ID.parentNode.appendChild(pID);
 			IDCorrect = false;
 			IDError = pID.innerHTML;
-		} else if (!validateDNILength(ID)) {
+		} else if (ID.value.length < 7) {
 			ID.classList.add("errorRed");
 			pID.innerHTML = "ID is too short";
+			ID.parentNode.appendChild(pID);
+			IDCorrect = false;
+			IDError = pID.innerHTML;
+		} else if (ID.value.length > 8) {
+			ID.classList.add("errorRed");
+			pID.innerHTML = "ID is too long";
 			ID.parentNode.appendChild(pID);
 			IDCorrect = false;
 			IDError = pID.innerHTML;
@@ -399,7 +315,8 @@ window.onload = function () {
 	dateOfBirth.onblur = function () {
 		var splitvalue = dateOfBirth.value.split("-");
 		var year = splitvalue[0];
-		if (emptyField(dateOfBirth)) {
+		console.log(year);
+		if (dateOfBirth.value == "") {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is requited";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
@@ -408,6 +325,12 @@ window.onload = function () {
 		} else if (2020 - year < 18) {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is not valid (too young)";
+			dateOfBirth.parentNode.appendChild(pDateOfBirth);
+			dateOfBirthCorrect = false;
+			dateOfBirthError = pDateOfBirth.innerHTML;
+		} else if (2020 - year > 100) {
+			dateOfBirth.classList.add("errorRed");
+			pDateOfBirth.innerHTML = "Date of birth is not valid (too old)";
 			dateOfBirth.parentNode.appendChild(pDateOfBirth);
 			dateOfBirthCorrect = false;
 			dateOfBirthError = pDateOfBirth.innerHTML;
@@ -424,7 +347,7 @@ window.onload = function () {
 
 	// on blur phone number
 	phoneNumber.onblur = function () {
-		if (emptyField(phoneNumber)) {
+		if (phoneNumber.value == "") {
 			phoneNumber.classList.add("errorRed");
 			pPhoneNumber.innerHTML = "Phone number is requited";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
@@ -436,9 +359,15 @@ window.onload = function () {
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
 			phoneNumberCorrect = false;
 			phoneNumberError = pPhoneNumber.innerHTML;
-		} else if (!validatePhoneNumberLength(phoneNumber)) {
+		} else if (phoneNumber.value.length < 9) {
 			phoneNumber.classList.add("errorRed");
 			pPhoneNumber.innerHTML = "Phone number is too short";
+			phoneNumber.parentNode.appendChild(pPhoneNumber);
+			phoneNumberCorrect = false;
+			phoneNumberError = pPhoneNumber.innerHTML;
+		} else if (phoneNumber.value.length > 10) {
+			phoneNumber.classList.add("errorRed");
+			pPhoneNumber.innerHTML = "Phone number is too long";
 			phoneNumber.parentNode.appendChild(pPhoneNumber);
 			phoneNumberCorrect = false;
 			phoneNumberError = pPhoneNumber.innerHTML;
@@ -468,7 +397,7 @@ window.onload = function () {
 				}
 			}
 		}
-		if (emptyField(address)) {
+		if (address.value == "") {
 			address.classList.add("errorRed");
 			pAddress.innerHTML = "Address is requited";
 			address.parentNode.appendChild(pAddress);
@@ -488,8 +417,7 @@ window.onload = function () {
 			addressError = pAddress.innerHTML;
 		} else if (notWords > 0) {
 			address.classList.add("errorRed");
-			pAddress.innerHTML =
-				"Address is not valid, only letters in the name of the street";
+			pAddress.innerHTML = "Address is not valid, only letters in the name of the street";
 			address.parentNode.appendChild(pAddress);
 			addressCorrect = false;
 			addressError = pAddress.innerHTML;
@@ -504,7 +432,7 @@ window.onload = function () {
 
 	// on blur locality
 	locality.onblur = function () {
-		if (emptyField(locality)) {
+		if (locality.value == "") {
 			locality.classList.add("errorRed");
 			pLocality.innerHTML = "Locality is requited";
 			locality.parentNode.appendChild(pLocality);
@@ -516,7 +444,7 @@ window.onload = function () {
 			locality.parentNode.appendChild(pLocality);
 			localityCorrect = false;
 			localityError = pLocality.innerHTML;
-		} else if (!validateLocalityLength(locality)) {
+		} else if (locality.value.length < 3) {
 			locality.classList.add("errorRed");
 			pLocality.innerHTML = "Locality is too short";
 			locality.parentNode.appendChild(pLocality);
@@ -533,19 +461,21 @@ window.onload = function () {
 
 	// on blur postal code
 	postalCode.onblur = function () {
-		if (emptyField(postalCode)) {
+		if (postalCode.value == "") {
 			postalCode.classList.add("errorRed");
 			pPostalCode.innerHTML = "Postal code is requited";
 			postalCode.parentNode.appendChild(pPostalCode);
 			postalCodeCorrect = false;
 			postalCodeError = pPostalCode.innerHTML;
-		} else if (!validatePostalCodeLength(postalCode)) {
+		} else if (postalCode.value.length < 4) {
 			postalCode.classList.add("errorRed");
-			if (postalCode.value.length < 4) {
-				pPostalCode.innerHTML = "Postal code is too short";
-			} else if (postalCode.value.length > 5) {
-				pPostalCode.innerHTML = "Postal code is too long";
-			}
+			pPostalCode.innerHTML = "Postal code is too short";
+			postalCode.parentNode.appendChild(pPostalCode);
+			postalCodeCorrect = false;
+			postalCodeError = pPostalCode.innerHTML;
+		} else if (postalCode.value.length > 5) {
+			postalCode.classList.add("errorRed");
+			pPostalCode.innerHTML = "Postal code is too long";
 			postalCode.parentNode.appendChild(pPostalCode);
 			postalCodeCorrect = false;
 			postalCodeError = pPostalCode.innerHTML;
@@ -566,13 +496,13 @@ window.onload = function () {
 
 	// on blur event for email
 	email.onblur = function () {
-		if (emptyField(email)) {
+		if (email.value == "") {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is requited";
 			email.parentNode.appendChild(pEmail);
 			emailCorrect = false;
 			emailError = pEmail.innerHTML;
-		} else if (!validateEmail(email)) {
+		} else if (!emailExpression.test(email.value)) {
 			email.classList.add("errorRed");
 			pEmail.innerHTML = "Email is not valid";
 			email.parentNode.appendChild(pEmail);
@@ -606,9 +536,21 @@ window.onload = function () {
 				special++;
 			}
 		}
-		if (letter + number < passwordSlipt.length) {
+		if (password.value == "") {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password is required";
+			password.parentNode.appendChild(pPassword);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
+		} else if (special > 0) {
 			password.classList.add("errorRed");
 			pPassword.innerHTML = "Password invalid, contains special characters";
+			password.parentNode.appendChild(pPassword);
+			passwordCorrect = false;
+			passwordError = pPassword.innerHTML;
+		} else if (space > 0) {
+			password.classList.add("errorRed");
+			pPassword.innerHTML = "Password invalid, contains spaces";
 			password.parentNode.appendChild(pPassword);
 			passwordCorrect = false;
 			passwordError = pPassword.innerHTML;
@@ -624,15 +566,9 @@ window.onload = function () {
 			password.parentNode.appendChild(pPassword);
 			passwordCorrect = false;
 			passwordError = pPassword.innerHTML;
-		} else if (emptyField(password)) {
+		} else if (password.value.length < 8) {
 			password.classList.add("errorRed");
-			pPassword.innerHTML = "Password is required";
-			password.parentNode.appendChild(pPassword);
-			passwordCorrect = false;
-			passwordError = pPassword.innerHTML;
-		} else if (!validatePassword(password)) {
-			password.classList.add("errorRed");
-			pPassword.innerHTML = "Password is not valid";
+			pPassword.innerHTML = "Password is too short";
 			password.parentNode.appendChild(pPassword);
 			passwordCorrect = false;
 			passwordError = pPassword.innerHTML;
@@ -643,20 +579,21 @@ window.onload = function () {
 			passwordCorrect = true;
 			passwordError = pPassword.innerHTML;
 		}
+		confirmPassword.onfocus();
+		confirmPassword.onblur();
 	};
 
 	// on blur event for confirm password
 	confirmPassword.onblur = function () {
-		if (emptyField(confirmPassword)) {
+		if (confirmPassword.value == "") {
 			confirmPassword.classList.add("errorRed");
 			pConfirmPassword.innerHTML = "Confirm password is requited";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
 			confirmPasswordCorrect = false;
 			confirmPasswordError = pConfirmPassword.innerHTML;
-		} else if (!validateConfirmPassword(password, confirmPassword)) {
+		} else if (confirmPassword.value !== password.value) {
 			confirmPassword.classList.add("errorRed");
-			pConfirmPassword.innerHTML =
-				"Confirm password is not the same as password";
+			pConfirmPassword.innerHTML = "Confirm password is not the same as password";
 			confirmPassword.parentNode.appendChild(pConfirmPassword);
 			confirmPasswordCorrect = false;
 			confirmPasswordError = pConfirmPassword.innerHTML;
@@ -685,6 +622,11 @@ window.onload = function () {
 	// on focus ID
 	ID.onfocus = function () {
 		ID.classList.remove("errorRed", "okGreen");
+	};
+
+	// on focus date of birth
+	dateOfBirth.onfocus = function () {
+		dateOfBirth.classList.remove("errorRed", "okGreen");
 	};
 
 	// on focus phone number
