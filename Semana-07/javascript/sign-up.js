@@ -203,19 +203,33 @@ window.onload = function () {
 
 	// set values of local storage in the form
 	function setValues() {
-		var correctDOB = localStorage.getItem("dateOfBirthStorage");
-		var correctDOBSplit = correctDOB.split("/");
-		name.value = localStorage.getItem("nameStorage");
-		lastName.value = localStorage.getItem("lastNameStorage");
-		ID.value = localStorage.getItem("IDStorage");
-		dateOfBirth.value = correctDOBSplit[2] + "-" + correctDOBSplit[0] + "-" + correctDOBSplit[1];
-		phoneNumber.value = localStorage.getItem("phoneNumberStorage");
-		address.value = localStorage.getItem("addressStorage");
-		locality.value = localStorage.getItem("localityStorage");
-		postalCode.value = localStorage.getItem("postalCodeStorage");
-		email.value = localStorage.getItem("emailStorage");
-		password.value = localStorage.getItem("passwordStorage");
-		confirmPassword.value = localStorage.getItem("passwordStorage");
+		if (
+			localStorage.getItem("dateOfBirthStorage") &&
+			localStorage.getItem("nameStorage") &&
+			localStorage.getItem("lastNameStorage") &&
+			localStorage.getItem("IDStorage") &&
+			localStorage.getItem("phoneNumberStorage") &&
+			localStorage.getItem("addressStorage") &&
+			localStorage.getItem("localityStorage") &&
+			localStorage.getItem("postalCodeStorage") &&
+			localStorage.getItem("emailStorage") &&
+			localStorage.getItem("passwordStorage") &&
+			localStorage.getItem("passwordStorage")
+		){
+			var correctDOB = localStorage.getItem("dateOfBirthStorage");
+			var correctDOBSplit = correctDOB.split("/");
+			name.value = localStorage.getItem("nameStorage");
+			lastName.value = localStorage.getItem("lastNameStorage");
+			ID.value = localStorage.getItem("IDStorage");
+			dateOfBirth.value = correctDOBSplit[2] + "-" + correctDOBSplit[0] + "-" + correctDOBSplit[1];
+			phoneNumber.value = localStorage.getItem("phoneNumberStorage");
+			address.value = localStorage.getItem("addressStorage");
+			locality.value = localStorage.getItem("localityStorage");
+			postalCode.value = localStorage.getItem("postalCodeStorage");
+			email.value = localStorage.getItem("emailStorage");
+			password.value = localStorage.getItem("passwordStorage");
+			confirmPassword.value = localStorage.getItem("passwordStorage");
+		}
 	}
 
 	// on blur name
@@ -315,7 +329,6 @@ window.onload = function () {
 	dateOfBirth.onblur = function () {
 		var splitvalue = dateOfBirth.value.split("-");
 		var year = splitvalue[0];
-		console.log(year);
 		if (dateOfBirth.value == "") {
 			dateOfBirth.classList.add("errorRed");
 			pDateOfBirth.innerHTML = "Date of birth is requited";
